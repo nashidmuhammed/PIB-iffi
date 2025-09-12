@@ -1,0 +1,533 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><meta name="description" content="Press Information Bureau Accreditation web application ." /><meta name="keywords" content="pib, accreditation, pibcard, central authroized " /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript">
+        if (top != self) {
+            top.location = self.location;
+        }
+        function openwindow(urlcode) {
+            var uname;
+            switch (urlcode) {
+                case 1:
+                   // uname = "http://pib.nic.in/prs/accreditationguidelines.pdf";
+  // sss 2-2-2022  uname = "https://static.pib.gov.in/WriteReadData/CMS/accreditationguidelines(1).pdf";
+		//uname = "https://static.pib.gov.in/WriteReadData/userfiles/file/TheCentralMediaAccreditationGuidelines20228V2U.pdf";
+		uname = "https://static.pib.gov.in/WriteReadData/userfiles/file/CentralMediaAccreditationGuidelines2022.pdf.PDFNA9X.PDF";
+                    window.open(uname);
+                    break;
+                case 2:
+                    //uname = "http://pib.nic.in/prs/accreditationguidelinesH.pdf";
+// sss 2-2-2022 uname = "https://static.pib.gov.in/WriteReadData/CMS/accreditationguidelinesH.pdf";
+          /// sss 2-2-2022          window.open(uname);
+                    break;
+                case 3:
+                   //uname = "http://pibaccreditation.nic.in/uhindi/hinhomepage.aspx";
+                                        uname = "/newcode/HomePageHindi.aspx";
+                    //uname = "http://pibaccreditation.nic.in/HomePageHindi.aspx";
+                    location.href = uname;
+                    break;
+                case 4:
+
+                    uname = "/newcode/statusid.aspx";
+                    location.href = uname;
+                    break;
+            }
+
+        }
+   
+    </script>
+    <style>
+          .blink {
+            animation: blinker 1.5s linear infinite;
+		
+        }
+        .link{
+            transition: all 0.03s ease;
+            color:white!important;
+            background-color:transparent !important
+           
+        }
+        .link:hover{
+            
+            color: #333;
+            transform: scale(1.05);
+        }
+
+	    .nav .separator {
+        color: #ccc;
+        font-size: 1.2rem;
+        padding: 0 5px;
+    }
+
+    .nav li:last-child .separator {
+        display: none;
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+   
+<script src="js1/jquery-3.7.1.min.js" type="text/javascript"></script>
+<script src="js1/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="js1/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js1/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="../css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" /><link href="../css/jquery-ui.css" rel="stylesheet" type="text/css" /><link href="../css/masterstylesheet.css" rel="stylesheet" type="text/css" /><title>
+	Login Page
+</title></head>
+<body style='background-color: #f3f7f8;'>
+    <form method="post" action="./login.aspx" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE3NzczOTMzOTcPZBYCZg9kFgQCAQ9kFgICAw9kFgICBQ9kFgJmD2QWBAIHD2QWBAIDDxYCHgdWaXNpYmxlaGQCBQ8PFgIfAGhkZAIJDxYCHwBnZAICD2QWAgIBD2QWAgIBDxYCHglpbm5lcmh0bWwFums8ZGl2IGNsYXNzPSdjb250YWluZXItZmx1aWQnIHN0eWxlPSdiYWNrZ3JvdW5kLWNvbG9yOiMzNjc1ODg7IHdpZHRoOjEwMCU7IHBhZGRpbmc6IDE1cHggMjBweCc+PGRpdiBjbGFzcz0ncm93Jz48ZGl2IGNsYXNzPSdjb2wtbWQtNiBjb2wteHMtMTInPjxoNCBzdHlsZT0nY29sb3I6d2hpdGU7IG1hcmdpbi1sZWZ0OjMwJTsnPjxiPlJUSSBhbmQgQ29udGFjdCBVczwvYj48L2g0Pjx0YWJsZSBzdHlsZT0nd2lkdGg6MTAwJTsgbWFyZ2luLWxlZnQ6MzAlOyB0ZXh0LWFsaWduOiBsZWZ0Oyc+PHRyIGRhdGEtaW5kZXg9JzAnPjx0ZCBzdHlsZT0ncGFkZGluZzo1cHg7Jz48YSBocmVmPSdodHRwczovL3BpYi5nb3YuaW4vY29udGVudC8zNjYzXzVfcGliLmdvdi5pbi5hc3B4P3JlZz0zJmxhbmc9MScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdXSE/igJlTIFdITyBBVCBQSUInIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5XSE/igJlTIFdITyBBVCBQSUI8L2E+PC90ZD48dGQgc3R5bGU9J3BhZGRpbmc6MnB4Oyc+PGEgaHJlZj0naHR0cHM6Ly9zdGF0aWMucGliLmdvdi5pbi9Xcml0ZVJlYWREYXRhL3NwZWNpZmljZG9jcy9kb2N1bWVudHMvMjAyNS9qdWwvZG9jMjAyNTcxNjU4ODIwMS5wZGYnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nV29yayBBbGxvY2F0aW9uJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+V29yayBBbGxvY2F0aW9uPC9hPjwvdGQ+PC90cj48dHIgZGF0YS1pbmRleD0nMSc+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vcGliLmdvdi5pbi9jb250ZW50LzM2NjRfNV9waWIuZ292LmluLmFzcHg/cmVnPTMmbGFuZz0xJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1RlbGVwaG9uZSBOdW1iZXIgb2YgUmVnaW9uYWwgQnJhbmNoIE9mZmljZXMgb2YgUElCICcgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPlRlbGVwaG9uZSBOdW1iZXIgb2YgUmVnaW9uYWwgQnJhbmNoIE9mZmljZXMgb2YgUElCIDwvYT48L3RkPjx0ZCBzdHlsZT0ncGFkZGluZzoycHg7Jz48YSBocmVmPScnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nV2ViIEluZm9ybWF0aW9uIE1hbmFnZXIgJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+V2ViIEluZm9ybWF0aW9uIE1hbmFnZXIgPC9hPjwvdGQ+PC90cj48dHIgZGF0YS1pbmRleD0nMic+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vc3RhdGljLnBpYi5nb3YuaW4vV3JpdGVSZWFkRGF0YS9zcGVjaWZpY2RvY3MvZG9jdW1lbnRzLzIwMjUvbWF5L2RvYzIwMjU1MjU0OTYwMS5wZGYnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nUHVibGljIEdyaWV2YW5jZSBPZmZpY2VyJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+UHVibGljIEdyaWV2YW5jZSBPZmZpY2VyPC9hPjwvdGQ+PHRkIHN0eWxlPSdwYWRkaW5nOjJweDsnPjxhIGhyZWY9J2h0dHBzOi8vcGliLmdvdi5pbi9jb250ZW50LzM3MTRfNV9QaWIuZ292LmluLmFzcHg/cmVnPTMmbGFuZz0xJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1RlbGVwaG9uZSBOb3Mgb2YgUElCIE9mZmljZXJzIG9mIEhxcnMnIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5UZWxlcGhvbmUgTm9zIG9mIFBJQiBPZmZpY2VycyBvZiBIcXJzPC9hPjwvdGQ+PC90cj48dHIgZGF0YS1pbmRleD0nMyc+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vc3RhdGljLnBpYi5nb3YuaW4vV3JpdGVSZWFkRGF0YS9zcGVjaWZpY2RvY3MvZG9jdW1lbnRzLzIwMjUvYXVnL2RvYzIwMjU4Mjg2MjI1MDEucGRmJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0NQSU9zIEFwcGVsbGF0ZSBBdXRob3JpdHkgTGlzdCcgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPkNQSU9zIEFwcGVsbGF0ZSBBdXRob3JpdHkgTGlzdDwvYT48L3RkPjx0ZCBzdHlsZT0ncGFkZGluZzoycHg7Jz48YSBocmVmPSdodHRwczovL3N0YXRpYy5waWIuZ292LmluL1dyaXRlUmVhZERhdGEvc3BlY2lmaWNkb2NzL2RvY3VtZW50cy8yMDI1L21heS9kb2MyMDI1NTg1NTIwMDEucGRmJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1JUSSBUcmFuc3BhcmVuY3kgQXVkaXQgQ29tcGxpYW5jZScgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPlJUSSBUcmFuc3BhcmVuY3kgQXVkaXQgQ29tcGxpYW5jZTwvYT48L3RkPjwvdHI+PHRyIGRhdGEtaW5kZXg9JzQnPjx0ZCBzdHlsZT0ncGFkZGluZzo1cHg7Jz48YSBocmVmPSdodHRwczovL3N0YXRpYy5waWIuZ292LmluL1dyaXRlUmVhZERhdGEvc3BlY2lmaWNkb2NzL2RvY3VtZW50cy8yMDI0L2Fwci9kb2MyMDI0NDE2MzMxMDAxLnBkZicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdJbmZvcm1hdGlvbiBNYW51YWwnIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5JbmZvcm1hdGlvbiBNYW51YWw8L2E+PC90ZD48dGQgc3R5bGU9J3BhZGRpbmc6MnB4Oyc+PGEgaHJlZj0naHR0cHM6Ly9zdGF0aWMucGliLmdvdi5pbi9Xcml0ZVJlYWREYXRhL3NwZWNpZmljZG9jcy9kb2N1bWVudHMvMjAyNS9hcHIvZG9jMjAyNTQxNzU0MTYwMS5wZGYnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRGVsZWdhdGlvbiBvZiBmaW5hbmNpYWwgcG93ZXJzJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+RGVsZWdhdGlvbiBvZiBmaW5hbmNpYWwgcG93ZXJzPC9hPjwvdGQ+PC90cj48dHIgZGF0YS1pbmRleD0nNSc+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vc3RhdGljLnBpYi5nb3YuaW4vV3JpdGVSZWFkRGF0YS9zcGVjaWZpY2RvY3MvZG9jdW1lbnRzLzIwMjUvbWF5L2RvYzIwMjU1OTU1MjgwMS5wZGYnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQ2l0aXplbiBDaGFydGVyJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+Q2l0aXplbiBDaGFydGVyPC9hPjwvdGQ+PHRkIHN0eWxlPSdwYWRkaW5nOjJweDsnPjxhIGhyZWY9J2h0dHBzOi8vd3d3LmRhdnAubmljLmluL3dyaXRlcmVhZGRhdGEvYW5ub3VuY2UvQWR2MTY1ODEwMTEyMDIzLnBkZicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdMaW5rIGZvciBSRlAgdXBsb2FkZWQgb24gQ0JDIHdlYnNpdGUgZm9yIFByaW50aW5nIFB1Ymxpc2hpbmcgUElCIGhhbmRib29rIEdlbmVyYWwgRWxlY3Rpb25zIDIwMjQgICcgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPkxpbmsgZm9yIFJGUCB1cGxvYWRlZCBvbiBDQkMgd2Vic2l0ZSBmb3IgUHJpbnRpbmcgUHVibGlzaGluZyBQSUIgaGFuZGJvb2sgR2VuZXJhbCBFbGVjdGlvbnMgMjAyNCAgPC9hPjwvdGQ+PC90cj48dHIgZGF0YS1pbmRleD0nNic+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vc3RhdGljLnBpYi5nb3YuaW4vV3JpdGVSZWFkRGF0YS9zcGVjaWZpY2RvY3MvZG9jdW1lbnRzLzIwMjUvbWF5L2RvYzIwMjU1MTM1NTM5MDEucGRmJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1RyYW5zcGFyZW5jeSBBdWRpdCcgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPlRyYW5zcGFyZW5jeSBBdWRpdDwvYT48L3RkPjx0ZCBzdHlsZT0ncGFkZGluZzoycHg7Jz48YSBocmVmPSdodHRwczovL3BncG9ydGFsLmdvdi5pbi8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nUG9ydGFsIGZvciBQdWJsaWMgR3JpZXZhbmNlIFN1Ym1pc3Npb24nIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5Qb3J0YWwgZm9yIFB1YmxpYyBHcmlldmFuY2UgU3VibWlzc2lvbjwvYT48L3RkPjwvdHI+PHRyIGRhdGEtaW5kZXg9JzcnPjx0ZCBzdHlsZT0ncGFkZGluZzo1cHg7Jz48YSBocmVmPSdodHRwczovL3N0YXRpYy5waWIuZ292LmluL1dyaXRlUmVhZERhdGEvc3BlY2lmaWNkb2NzL2RvY3VtZW50cy8yMDI1L2Fwci9kb2MyMDI1NDE3NTQxNDAxLnBkZicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdBbGxvY2F0aW9uIEJ1ZGdldCcgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPkFsbG9jYXRpb24gQnVkZ2V0PC9hPjwvdGQ+PHRkIHN0eWxlPSdwYWRkaW5nOjJweDsnPjxhIGhyZWY9J2h0dHBzOi8vc3RhdGljLnBpYi5nb3YuaW4vV3JpdGVSZWFkRGF0YS9zcGVjaWZpY2RvY3MvZG9jdW1lbnRzLzIwMjUvbWF5L2RvYzIwMjU1Mjk1NTk4MDEucGRmJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0FtZW5kbWVudCBvZiBSUnMgZm9yIEdyb3VwIEMgUG9zdHMnIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5BbWVuZG1lbnQgb2YgUlJzIGZvciBHcm91cCBDIFBvc3RzPC9hPjwvdGQ+PC90cj48dHIgZGF0YS1pbmRleD0nOCc+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vc3RhdGljLnBpYi5nb3YuaW4vV3JpdGVSZWFkRGF0YS9zcGVjaWZpY2RvY3MvZG9jdW1lbnRzLzIwMjUvZmViL2RvYzIwMjUyMTQ1MDE5MDEucGRmJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0ludGVybmFsIENvbXBsYWludHMgQ29tbWl0dGVlJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+SW50ZXJuYWwgQ29tcGxhaW50cyBDb21taXR0ZWU8L2E+PC90ZD48dGQgc3R5bGU9J3BhZGRpbmc6MnB4Oyc+PGEgaHJlZj0naHR0cHM6Ly9zdGF0aWMucGliLmdvdi5pbi9Xcml0ZVJlYWREYXRhL3NwZWNpZmljZG9jcy9kb2N1bWVudHMvMjAyNC9hcHIvZG9jMjAyNDQ1MzI4NjAxLnBkZicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdBbWVuZG1lbnQgb2YgUlJzIGZvciBHcm91cCBBIGFuZCBHcm91cCBCIHBvc3RzICcgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPkFtZW5kbWVudCBvZiBSUnMgZm9yIEdyb3VwIEEgYW5kIEdyb3VwIEIgcG9zdHMgPC9hPjwvdGQ+PC90cj48dHIgZGF0YS1pbmRleD0nOSc+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vcGliLmdvdi5pbi9jb250ZW50LzM3MDVfNV9waWIubmljLmluLmFzcHgnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nTGlhaXNvbiBPZmZpY2VyJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+TGlhaXNvbiBPZmZpY2VyPC9hPjwvdGQ+PHRkIHN0eWxlPSdwYWRkaW5nOjJweDsnPjxhIGhyZWY9J2h0dHBzOi8vc3RhdGljLnBpYi5nb3YuaW4vV3JpdGVSZWFkRGF0YS9zcGVjaWZpY2RvY3MvZG9jdW1lbnRzLzIwMjQvZGVjL2RvYzIwMjQxMjIwNDc1MTAxLnBkZicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdUcmFuc2ZlciBQb2xpY3kgZm9yIENHLUlJICZhbXA7IE1UUyBvZiBQSUIgUmVnaW9uYWwsIEJyYW5jaCBPZmZpY2VzJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+VHJhbnNmZXIgUG9saWN5IGZvciBDRy1JSSAmYW1wOyBNVFMgb2YgUElCIFJlZ2lvbmFsLCBCcmFuY2ggT2ZmaWNlczwvYT48L3RkPjwvdHI+IDx0ZCBzdHlsZT0nZm9udC13ZWlnaHQ6OTAwOyAgZm9udC1zaXplOmxhcmdlJz48YSBocmVmPSdodHRwczovL3BpYi5nb3YuaW4vY29udGVudC8yNF81X21vcmUuYXNweD9yZWc9MyZsYW5nPTEnIHN0eWxlPSdjb2xvcjogV2hpdGUnOyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiB0YXJnZXQ9J19ibGFuayc+TW9yZTwvYT48L3RkPjwvdGFibGU+PC9kaXY+PGRpdiBjbGFzcz0nY29sLW1kLTYgY29sLXhzLTEyJz48aDQgc3R5bGU9J2NvbG9yOndoaXRlOyB0ZXh0LWFsaWduOmxlZnQ7IG1hcmdpbi1sZWZ0OiA0MCU7Jz48Yj5HT0kgTGlua3M8L2I+PC9oND48dGFibGUgc3R5bGU9J3dpZHRoOjUwJTsgbWFyZ2luLWxlZnQ6NDAlOyB0ZXh0LWFsaWduOiBsZWZ0Oyc+PHRyPjx0ZCBzdHlsZT0ncGFkZGluZzo1cHg7Jz48YSBocmVmPSdodHRwczovL21pYi5nb3YuaW4vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J01pbmlzdHJ5IG9mIEluZm9ybWF0aW9uIGFuZCBCcm9hZGNhc3RpbmcnIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5NaW5pc3RyeSBvZiBJbmZvcm1hdGlvbiBhbmQgQnJvYWRjYXN0aW5nPC9hPjwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vYWdyaXdlbGZhcmUuZ292LmluLycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdNaW5pc3RyeSBvZiBBZ3JpY3VsdHVyZSAmYW1wOyBGYXJtZXJzIFdlbGZhcmUnIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5NaW5pc3RyeSBvZiBBZ3JpY3VsdHVyZSAmYW1wOyBGYXJtZXJzIFdlbGZhcmU8L2E+PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3BhZGRpbmc6NXB4Oyc+PGEgaHJlZj0naHR0cDovL21pbmlzdHJ5b2Z0ZXh0aWxlcy5nb3YuaW4vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J01pbmlzdHJ5IG9mIFRleHRpbGVzJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+TWluaXN0cnkgb2YgVGV4dGlsZXM8L2E+PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3BhZGRpbmc6NXB4Oyc+PGEgaHJlZj0naHR0cHM6Ly9jb21tZXJjZS5nb3YuaW4vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J01pbmlzdHJ5IG9mIENvbW1lcmNlICZhbXA7IEluZHVzdHJ5ICcgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPk1pbmlzdHJ5IG9mIENvbW1lcmNlICZhbXA7IEluZHVzdHJ5IDwvYT48L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0ncGFkZGluZzo1cHg7Jz48YSBocmVmPSdodHRwczovL21vZC5nb3YuaW4vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J01pbmlzdHJ5IG9mIERlZmVuY2UnIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5NaW5pc3RyeSBvZiBEZWZlbmNlPC9hPjwvdGQ+PC90cj48dHI+PHRkIHN0eWxlPSdwYWRkaW5nOjVweDsnPjxhIGhyZWY9J2h0dHBzOi8vZmlubWluLmdvdi5pbi8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nTWluaXN0cnkgb2YgRmluYW5jZScgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPk1pbmlzdHJ5IG9mIEZpbmFuY2U8L2E+PC90ZD48L3RyPjx0cj48dGQgc3R5bGU9J3BhZGRpbmc6NXB4Oyc+PGEgaHJlZj0naHR0cHM6Ly93d3cubW9oZncuZ292LmluLycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdNaW5pc3RyeSBvZiBIZWFsdGggYW5kIEZhbWlseSBXZWxmYXJlJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+TWluaXN0cnkgb2YgSGVhbHRoIGFuZCBGYW1pbHkgV2VsZmFyZTwvYT48L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0ncGFkZGluZzo1cHg7Jz48YSBocmVmPSdodHRwczovL21oYS5nb3YuaW4vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J01pbmlzdHJ5IG9mIEhvbWUgQWZmYWlycycgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgc3R5bGU9J2NvbG9yOndoaXRlOycgb25tb3VzZW92ZXI9InRoaXMuc3R5bGUuY29sb3I9JyNmMWM0MGYnIiBvbm1vdXNlb3V0PSJ0aGlzLnN0eWxlLmNvbG9yPSd3aGl0ZSciPk1pbmlzdHJ5IG9mIEhvbWUgQWZmYWlyczwvYT48L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0ncGFkZGluZzo1cHg7Jz48YSBocmVmPSdodHRwOi8vbW9odWEuZ292LmluLycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdNaW5pc3RyeSBvZiBIb3VzaW5nIGFuZCBVcmJhbiBBZmZhaXJzJyBvbmNsaWNrPSJyZXR1cm4gY29uZmlybSgnVGhpcyBsaW5rIHNoYWxsIHRha2UgeW91IHRvIGFuIGV4dGVybmFsIHdlYnNpdGUuIENsaWNrIE9LIHRvIGNvbnRpbnVlLiBDbGljayBDYW5jZWwgdG8gc3RvcCcpIiBzdHlsZT0nY29sb3I6d2hpdGU7JyBvbm1vdXNlb3Zlcj0idGhpcy5zdHlsZS5jb2xvcj0nI2YxYzQwZiciIG9ubW91c2VvdXQ9InRoaXMuc3R5bGUuY29sb3I9J3doaXRlJyI+TWluaXN0cnkgb2YgSG91c2luZyBhbmQgVXJiYW4gQWZmYWlyczwvYT48L3RkPjwvdHI+PHRyPjx0ZCBzdHlsZT0ncGFkZGluZzo1cHg7Jz48YSBocmVmPSdodHRwczovL3d3dy5lZHVjYXRpb24uZ292LmluLycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdNaW5pc3RyeSBvZiBFZHVjYXRpb24nIG9uY2xpY2s9InJldHVybiBjb25maXJtKCdUaGlzIGxpbmsgc2hhbGwgdGFrZSB5b3UgdG8gYW4gZXh0ZXJuYWwgd2Vic2l0ZS4gQ2xpY2sgT0sgdG8gY29udGludWUuIENsaWNrIENhbmNlbCB0byBzdG9wJykiIHN0eWxlPSdjb2xvcjp3aGl0ZTsnIG9ubW91c2VvdmVyPSJ0aGlzLnN0eWxlLmNvbG9yPScjZjFjNDBmJyIgb25tb3VzZW91dD0idGhpcy5zdHlsZS5jb2xvcj0nd2hpdGUnIj5NaW5pc3RyeSBvZiBFZHVjYXRpb248L2E+PC90ZD48L3RyPiA8dGQgc3R5bGU9J2ZvbnQtd2VpZ2h0OjkwMDsgIGZvbnQtc2l6ZTpsYXJnZSc+PGEgaHJlZj0naHR0cHM6Ly9waWIuZ292LmluL2NvbnRlbnQvMjVfNV9tb3JlLmFzcHg/cmVnPTMmbGFuZz0xJyBzdHlsZT0nY29sb3I6IHdoaXRlJzsgb25jbGljaz0icmV0dXJuIGNvbmZpcm0oJ1RoaXMgbGluayBzaGFsbCB0YWtlIHlvdSB0byBhbiBleHRlcm5hbCB3ZWJzaXRlLiBDbGljayBPSyB0byBjb250aW51ZS4gQ2xpY2sgQ2FuY2VsIHRvIHN0b3AnKSIgdGFyZ2V0PSdfYmxhbmsnPk1vcmU8L2E+PC90ZD48L3RhYmxlPjwvZGl2PjwvZGl2PjwvZGl2PmRkic/zvVhRd9+1/dhjQwQvXrZiGZ9T5AoxbDNA1c+jgSw=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=kEXNR3Kx_7SS3gOYKE8X99NcYhjsvTCfQpDzBY9qLrOAXuoeeBByBPIkpvKmWfx3JHEw6p2NyAYba2yKJZYxR8w8BI8QEaHlPkJZHD-xtMc1&amp;t=638568802371266408" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=9Ize-Tfu4e8FFZjgM8JrVfLwBiQ9Le0eDO61dV_5j881ikF0ltYmEGvnfn1Au7y5c9jMG-iW5A11rhwGp2mRgQ0coo5ykaHp5nikxhcSX-yzO9vda2tz6VmwVTDKMaToGMkvL0AlvQcqKjt2hLhcOfk8J_RxW9R93rDCLQQzQq81&amp;t=ffffffffc820c398" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ejhfNoKsC6H0bCyiM4bK1soEZPS7449un1kQzy6KfcAn5lrjo9DxPBbmk8qhR7lG4ulo6k_hzVYzHvs-gB7GAJAP2pqu1L7G87itbd7MeGaKWawm-ofBAbon7re1le-kvx9FV05KdpzeVoaXjb60SMeAJbI9UAQlYdLiLdUMB_RWBu2cb-uXofMC3bGat2Lx0&amp;t=ffffffffc820c398" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="547AEE32" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA408uuakeoiQMg8svWE8c45KVALBlH9QBHc2eQzRBbUS+nlpwW1WYt2MI+xJZOY5PAQD/vHuRh0Cw6ZgxO0kSfW8j++ucMiLqWDZtMO13gr/BoZ16EN8nc2LhMbA8OjOMVX/UsuQ5TN5ywcEnhwvixmq6IDlMrAsuUsjIno5R6j5ZCOvxS0u9A1PraEuKGh0A3FMWIvZpc5hS5jr60KjoOJbk4rA5tEwP+kBJLF0X7HOerla5qAgQNJ0QG9Drku/z4bifdujSibODz2lHN+RHz64Zn9iu5fvavirplAcikZQXkQSMcm8epxQFljyT/m05kKzIzvVXGklqm9aferMCit" />
+</div>
+    <div class="well" style="margin-bottom: -5px;">
+        <div class="row">
+            <div class="col-md-1 col-sm-4 col-xs-4">
+                <div class="logo">
+                    <img src="/newcode/Documents/logosm.png" class="img-responsive" alt="Indian Emblem" />
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-8">
+                <div class="text-left text-primary">
+		<h2 class="text-danger">
+                        पत्र सूचना कार्यालय</h2>
+                    <h1>
+                        Press Information Bureau</h1>
+                    
+                </div>
+            </div>
+
+ <div class="col-md-4 col-sm-6 col-xs-12">
+          <img class="img-responsive" src="https://cbpssubscriber.mygov.in/assets/uploads/X0qP81f7lg3YqNFI" alt="MyGov Link" id="_To159l5GKG3cPNYR" onclick="javascript:window.open('https://cbpssubscriber.mygov.in/aff/To159l5GKG3cPNYR')" style="cursor:pointer" onload="javascript:(function(){if(typeof _done == 'undefined' || !_done){this.setAttribute('src', this.getAttribute('src')+'?'+Math.floor((Math.random() * 100) + 1)); _done=true;}}).call(this)" >
+          
+  </div>
+
+        </div>
+        <br />
+
+        <div class="n">
+            <nav class="navbar navbar-inverse" style='background-color: Teal; color: White; border: 1px solid #FFF;
+                box-shadow: 0px 4px 8px #888888;'>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" style="color:#fff;"><b>Accreditation</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        
+        <li><a onclick="openwindow(1)" class="link" style="color:white;" href="#">Guidelines in English</a></li>
+        
+        <li><a onclick="openwindow(4)" class="link" style="color:white;" href="#" class="blink" style=" color: azure;">Track Status</a></li>    
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<li><a onclick="openwindow(3)" class="link" style="color:white;" href="#">हिंदी में फॉर्म भरने के लिए यहाँ क्लिक करें</a></li>
+                    
+      </ul>
+    </div>
+  </div>
+</nav>
+        </div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$ContentPlaceHolder1$UpdatePanel1',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div class="maincontent" style="display: block;">
+            
+
+    <script src="sha512.js" type="text/javascript"></script>
+
+
+
+
+    <script type="text/javascript" language="javascript">
+
+        function DisableRightClick(event) {
+
+            //For mouse right click
+
+            if (event.button == 2) {
+
+                alert("Right Clicking not allowed!");
+
+            }
+
+        }
+        function ClosePage() {
+            alert("Close Page");
+            window.close();
+        }
+        function Encode() {
+            var original_field;
+            var Enc = document.getElementById('ctl00_ContentPlaceHolder1_puk').value;
+            var Mod = document.getElementById('ctl00_ContentPlaceHolder1_md').value;
+            original_field = document.getElementById('ctl00_ContentPlaceHolder1_Txt_user').value;
+
+
+            //added on 28-6-2019
+            if (original_field == "") {
+                //commented on 21-12-2021 sss
+                // alert("Enter Username");
+                return;
+            }
+            /////
+
+            document.getElementById('ctl00_ContentPlaceHolder1_user').value = encrypt(original_field, Enc, Mod);
+
+
+            document.getElementById('ctl00_ContentPlaceHolder1_Txt_user').value = "";
+           // document.getElementById('ctl00_ContentPlaceHolder1_Txt_user').value =encrypt(original_field, Enc, Mod);
+
+            original_field = document.getElementById('ctl00_ContentPlaceHolder1_Txt_pass').value;
+
+
+ //document.getElementById('ctl00_ContentPlaceHolder1_pass').value = encrypt(original_field, Enc, Mod);
+            document.getElementById('ctl00_ContentPlaceHolder1_Txt_pass').value = "";
+            document.getElementById('ctl00_ContentPlaceHolder1_pass').value = hex_sha512(original_field);
+
+
+
+
+
+
+        }
+        function encrypt(original_field, Enc, Mod) {
+            encoded_field = "";
+            // loop through all single letter of field
+            for (i = 0; i <= original_field.length - 1; i++) {
+
+                // charCodeAt gives the ASC value of character in position i
+                encoded_field = encoded_field + Mult((original_field.charCodeAt(i)), Enc, Mod) + ","
+            }
+            return encoded_field;
+        }
+        function Mult(x, p, m) {
+            var y = 1;
+            var i = 0;
+            for (i = p; i > 0; i--) {
+                while ((i / 2) == (Math.floor((i / 2)))) {
+                    x = ModFunction((x * x), m);
+                    i = (i / 2);
+                }
+                y = ModFunction((x * y), m);
+            }
+
+            return y;
+        }
+        function ModFunction(Main, Modulus) {
+            var ModFunction = Main - (Math.floor((Main / Modulus)) * Modulus);
+            return ModFunction;
+        }
+
+        function openlogin(ocode) {
+            //location.href = "newuser.aspx";
+            location.href = "~/newuserevent.aspx";
+        }
+
+        
+        function showLogin(method) {
+
+            document.getElementById('loginPannel').style.display = "block";
+
+                document.getElementById('passwordLogin').classList.add('d-none');
+                document.getElementById('passwordLogin').style.display = "block";
+            document.getElementById('otpLogin').classList.add('d-none');
+            if (method === 'password') {
+                document.getElementById('passwordLogin').classList.remove('d-none');
+            } else if (method === 'otp') {
+                document.getElementById('otpLogin').style.display = "block";
+            }
+        }
+    
+
+
+    </script>
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$user" id="ctl00_ContentPlaceHolder1_user" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$pass" id="ctl00_ContentPlaceHolder1_pass" />
+
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$puk" id="ctl00_ContentPlaceHolder1_puk" value="15436639" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$md" id="ctl00_ContentPlaceHolder1_md" value="59776921" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$ipHide" id="ctl00_ContentPlaceHolder1_ipHide" />
+    <div id="ctl00_ContentPlaceHolder1_UpdatePanel1">
+	
+  <div class="container" style="min-height: 50px; height: auto;">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2" style="margin-top: 0px; margin-bottom: 50px;">
+            <!-- Banner and Event Details -->
+            <div class="container text-center mt-4" style="display: contents;">
+                <img src="event-banner.jpg" class="img-fluid mb-3" alt="Event Banner" />
+                <h2>Welcome to the Annual Event Registration</h2>
+                <p class="lead">Register to attend the upcoming event with exciting sessions, networking and more.</p>
+            </div>
+
+            <!-- Login Method Selector -->
+            <div class="text-center mb-4" id="loginMethodSelector">
+               <input type="submit" name="ctl00$ContentPlaceHolder1$loginotp" value="Login with OTP" id="ctl00_ContentPlaceHolder1_loginotp" class="btn btn-primary" />
+               <input type="submit" name="ctl00$ContentPlaceHolder1$loginpswd" value="Login with Password" id="ctl00_ContentPlaceHolder1_loginpswd" class="btn btn-primary" />
+                <br/>
+            </div>
+            <br />
+
+            <!-- Login Panel -->
+            <div class="panel panel-primary d-none" id="loginPanel" style='border-radius: 0px; box-shadow: 2px 2px 4px #888888; border-color: Teal;'>
+                <div class="panel-heading text-center" style='background-color: Teal; color: #FFFFFF; border-radius: 0px; box-shadow: 0px 4px 4px #888888;'>
+                    <div id="loginPannel" class='panel-title' >Log In</div>
+                </div>
+                <div class="panel-body">
+                    <span id="ctl00_ContentPlaceHolder1_L_error" style="color:Red;"></span>
+
+                    <!-- Password Login -->
+                    <div id="ctl00_ContentPlaceHolder1_passwordLogin" class="login-section d-none">
+                        <div class="form-group">
+                            <label >User Name:</label>
+                            <input name="ctl00$ContentPlaceHolder1$Txt_user" type="text" id="ctl00_ContentPlaceHolder1_Txt_user" class="form-control" placeholder="User Name" autocomplete="off" />
+                        </div>
+                        
+                        
+                    </div>
+
+                    <!-- OTP Login -->
+                    <div id="ctl00_ContentPlaceHolder1_otpLogin" class="login-section d-none">
+                       <input type="submit" name="ctl00$ContentPlaceHolder1$btnSendOtp" value="Send OTP" id="ctl00_ContentPlaceHolder1_btnSendOtp" class="btn btn-warning w-100 mb-3" />
+                        <div class="form-group">
+                            <label>Enter OTP:</label>
+                            <input name="ctl00$ContentPlaceHolder1$txtOtp" type="text" id="ctl00_ContentPlaceHolder1_txtOtp" class="form-control" placeholder="Enter OTP" />
+                        </div>
+                        <input type="submit" name="ctl00$ContentPlaceHolder1$btnOtpLogin" value="Verify &amp; Login" id="ctl00_ContentPlaceHolder1_btnOtpLogin" class="btn btn-success w-100" />
+                    </div>
+
+                    <!-- Captcha Section -->
+                    
+                </div>
+
+                <div class="panel-footer text-center">
+                    <a id="ctl00_ContentPlaceHolder1_LinkButton1" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton1&#39;,&#39;&#39;)" style="color:Red;font-weight:bold;">
+                        <em>Forgot Password/User Name? Click here to recover.</em>
+                    </a><br />
+                    <a id="ctl00_ContentPlaceHolder1_lnbtn_new" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$lnbtn_new&#39;,&#39;&#39;)" style="color:Green;">
+                        New User? Click Here to Create User ID.
+                    </a>
+                </div>
+                <div class="text-center mt-2">
+                    <button type="button" class="btn btn-link" onclick="goBackToMethodSelection()">&larr; Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Circular Iframe 
+    <iframe src="circular.html" style="width:100%;height:620px;"></iframe>-->
+
+    <script type="text/javascript">
+        function showLoginMethod(method) {
+            document.getElementById('loginMethodSelector').classList.add('d-none');
+            document.getElementById('loginPanel').classList.remove('d-none');
+            document.getElementById('passwordLogin').classList.add('d-none');
+            document.getElementById('otpLogin').classList.add('d-none');
+            if (method === 'password') {
+                document.getElementById('passwordLogin').classList.remove('d-none');
+            } else {
+                document.getElementById('otpLogin').classList.remove('d-none');
+            }
+        }
+
+        function goBackToMethodSelection() {
+            document.getElementById('loginMethodSelector').classList.remove('d-none');
+            document.getElementById('loginPanel').classList.add('d-none');
+        }
+    </script>
+
+            <div id="ctl00_ContentPlaceHolder1_hdiv">
+            </div>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#rmhover").click(function () {
+                        $(this).fadeOut();
+                        $("#rmpopup").fadeOut();
+                    });
+
+                    $("#rmclose").click(function () {
+                        $("#rmhover").fadeOut();
+                        $("#rmpopup").fadeOut();
+                    });
+                    setTimeout(function () { $("#rmhover").fadeOut() }, 15000);
+                    setTimeout(function () { $("#rmpopup").fadeOut() }, 15000);
+
+                });
+            </script>
+            <style type="text/css">
+                #rmhover {
+                    position: fixed;
+                    background: #000;
+                    width: 100%;
+                    height: 100%;
+                    opacity: .6;
+                }
+
+                #rmpopup {
+                    position: absolute;
+                    width: 50%;
+                    border: 5px solid #fff;
+                    background: #fff;
+                    left: 24%;
+                    top: 26%;
+                    border-radius: 5px;
+                    text-align: center;
+                    box-shadow: 0 0 10px 0 #000;
+                    z-index: 1000;
+                }
+
+                #rmclose {
+                    position: absolute;
+                    background: black;
+                    color: white;
+                    right: -15px;
+                    top: -15px;
+                    border-radius: 50%;
+                    width: 32px;
+                    height: 32px;
+                    line-height: 30px;
+                    text-align: center;
+                    font-size: 11px;
+                    font-weight: bold;
+                    font-family: 'Arial Black', Arial, sans-serif;
+                    cursor: pointer;
+                    box-shadow: 0 0 10px 0 #000;
+                }
+                .login-section {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+            </style>
+        
+</div>
+
+        </div>
+    </div>
+    </form>
+
+<div class="container-fluid text-center wimhover" style="margin-top: 36px; background-color: white; color: #fff; padding: 10px;">
+        <div class="row">
+            <div class="col-md-6">
+                <a title="Web Information Manager" href="https://www.pib.gov.in/content/3709_5_pib.nic.in.aspx">
+                    <h4  style="text-align: right;">Web Information Manager</h4>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="/Documents/Acrediation2.pdf" target="_blank">
+                    <img src="/images/GIGW_logo.png" title="GIGW" alt="GIGW Logo" style="max-height: 50px;display: flex; align-items: start; margin-left: 30px;" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+   
+                
+
+<script src="js/jsnew/jquery.min.js"></script>
+
+
+ 
+ 
+<div id="ctl00_ContentPlaceHolder2_ctl00_divContent"><div class='container-fluid' style='background-color:#367588; width:100%; padding: 15px 20px'><div class='row'><div class='col-md-6 col-xs-12'><h4 style='color:white; margin-left:30%;'><b>RTI and Contact Us</b></h4><table style='width:100%; margin-left:30%; text-align: left;'><tr data-index='0'><td style='padding:5px;'><a href='https://pib.gov.in/content/3663_5_pib.gov.in.aspx?reg=3&lang=1' target='_blank' title='WHO’S WHO AT PIB' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">WHO’S WHO AT PIB</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jul/doc2025716588201.pdf' target='_blank' title='Work Allocation' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Work Allocation</a></td></tr><tr data-index='1'><td style='padding:5px;'><a href='https://pib.gov.in/content/3664_5_pib.gov.in.aspx?reg=3&lang=1' target='_blank' title='Telephone Number of Regional Branch Offices of PIB ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Telephone Number of Regional Branch Offices of PIB </a></td><td style='padding:2px;'><a href='' target='_blank' title='Web Information Manager ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Web Information Manager </a></td></tr><tr data-index='2'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202552549601.pdf' target='_blank' title='Public Grievance Officer' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Public Grievance Officer</a></td><td style='padding:2px;'><a href='https://pib.gov.in/content/3714_5_Pib.gov.in.aspx?reg=3&lang=1' target='_blank' title='Telephone Nos of PIB Officers of Hqrs' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Telephone Nos of PIB Officers of Hqrs</a></td></tr><tr data-index='3'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/aug/doc2025828622501.pdf' target='_blank' title='CPIOs Appellate Authority List' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">CPIOs Appellate Authority List</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558552001.pdf' target='_blank' title='RTI Transparency Audit Compliance' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">RTI Transparency Audit Compliance</a></td></tr><tr data-index='4'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/apr/doc2024416331001.pdf' target='_blank' title='Information Manual' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Information Manual</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/apr/doc2025417541601.pdf' target='_blank' title='Delegation of financial powers' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Delegation of financial powers</a></td></tr><tr data-index='5'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202559552801.pdf' target='_blank' title='Citizen Charter' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Citizen Charter</a></td><td style='padding:2px;'><a href='https://www.davp.nic.in/writereaddata/announce/Adv165810112023.pdf' target='_blank' title='Link for RFP uploaded on CBC website for Printing Publishing PIB handbook General Elections 2024  ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Link for RFP uploaded on CBC website for Printing Publishing PIB handbook General Elections 2024  </a></td></tr><tr data-index='6'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc2025513553901.pdf' target='_blank' title='Transparency Audit' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Transparency Audit</a></td><td style='padding:2px;'><a href='https://pgportal.gov.in/' target='_blank' title='Portal for Public Grievance Submission' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Portal for Public Grievance Submission</a></td></tr><tr data-index='7'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/apr/doc2025417541401.pdf' target='_blank' title='Allocation Budget' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Allocation Budget</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc2025529559801.pdf' target='_blank' title='Amendment of RRs for Group C Posts' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Amendment of RRs for Group C Posts</a></td></tr><tr data-index='8'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/feb/doc2025214501901.pdf' target='_blank' title='Internal Complaints Committee' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Internal Complaints Committee</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/apr/doc202445328601.pdf' target='_blank' title='Amendment of RRs for Group A and Group B posts ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Amendment of RRs for Group A and Group B posts </a></td></tr><tr data-index='9'><td style='padding:5px;'><a href='https://pib.gov.in/content/3705_5_pib.nic.in.aspx' target='_blank' title='Liaison Officer' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Liaison Officer</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/dec/doc20241220475101.pdf' target='_blank' title='Transfer Policy for CG-II &amp; MTS of PIB Regional, Branch Offices' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Transfer Policy for CG-II &amp; MTS of PIB Regional, Branch Offices</a></td></tr> <td style='font-weight:900;  font-size:large'><a href='https://pib.gov.in/content/24_5_more.aspx?reg=3&lang=1' style='color: White'; onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" target='_blank'>More</a></td></table></div><div class='col-md-6 col-xs-12'><h4 style='color:white; text-align:left; margin-left: 40%;'><b>GOI Links</b></h4><table style='width:50%; margin-left:40%; text-align: left;'><tr><td style='padding:5px;'><a href='https://mib.gov.in/' target='_blank' title='Ministry of Information and Broadcasting' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Information and Broadcasting</a></td></tr><tr><td style='padding:5px;'><a href='https://agriwelfare.gov.in/' target='_blank' title='Ministry of Agriculture &amp; Farmers Welfare' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Agriculture &amp; Farmers Welfare</a></td></tr><tr><td style='padding:5px;'><a href='http://ministryoftextiles.gov.in/' target='_blank' title='Ministry of Textiles' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Textiles</a></td></tr><tr><td style='padding:5px;'><a href='https://commerce.gov.in/' target='_blank' title='Ministry of Commerce &amp; Industry ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Commerce &amp; Industry </a></td></tr><tr><td style='padding:5px;'><a href='https://mod.gov.in/' target='_blank' title='Ministry of Defence' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Defence</a></td></tr><tr><td style='padding:5px;'><a href='https://finmin.gov.in/' target='_blank' title='Ministry of Finance' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Finance</a></td></tr><tr><td style='padding:5px;'><a href='https://www.mohfw.gov.in/' target='_blank' title='Ministry of Health and Family Welfare' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Health and Family Welfare</a></td></tr><tr><td style='padding:5px;'><a href='https://mha.gov.in/' target='_blank' title='Ministry of Home Affairs' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Home Affairs</a></td></tr><tr><td style='padding:5px;'><a href='http://mohua.gov.in/' target='_blank' title='Ministry of Housing and Urban Affairs' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Housing and Urban Affairs</a></td></tr><tr><td style='padding:5px;'><a href='https://www.education.gov.in/' target='_blank' title='Ministry of Education' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Education</a></td></tr> <td style='font-weight:900;  font-size:large'><a href='https://pib.gov.in/content/25_5_more.aspx?reg=3&lang=1' style='color: white'; onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" target='_blank'>More</a></td></table></div></div></div></div>
+
+
+   
+           
+            
+
+
+    <footer class="footer" style="background-color: Teal; margin-bottom: 0; color: #FFFFFF;
+        clear: both; box-shadow: 2px 0px 8px #888888; border: 1px solid #FFFFFF;">
+
+      <div class="container-fluid">
+<ul style="list-style: none; padding: 0; display: flex; gap: 10px; align-items: center; justify-content: center;">
+                <li style="display: inline;">
+                    <a class="link" title="About us" href="https://pib.gov.in/aboutpibn.aspx" target="_blank" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">About us</a>
+                </li>
+                <li style="display: inline;">|</li>
+                <li style="display: inline;">
+                    <a class="link" title="Terms &amp; Conditions" target="_blank" href="Documents/TermsandConditions.pdf" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Terms &amp; Conditions</a>
+                </li>
+                <li style="display: inline;">|</li>
+                <li style="display: inline;">
+                    <a class="link" title="Copyright Policy" target="_blank" href="Documents/CopyrightPolicy.pdf" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Copyright Policy</a>
+                </li>
+                <li style="display: inline;">|</li>
+                <li style="display: inline;">
+                    <a class="link" title="Privacy Policy" target="_blank" href="Documents/PrivacyPolicy.pdf" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Privacy Policy</a>
+                </li>
+                <li style="display: inline;">|</li>
+                <li style="display: inline;">
+                    <a title="Hyperlinking Policy" target="_blank" href="Documents/HyperlinkingPolicy.pdf" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Hyperlinking Policy</a>
+                </li>
+                <li style="display: inline;">|</li>
+                <li style="display: inline;">
+                    <a class="link" title="National Portal" href="https://www.india.gov.in/" target="_blank" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">National Portal</a>
+                </li>
+                <li style="display: inline;">|</li>
+                <li style="display: inline; ">
+                    <a class="link" title="Help" href="https://pib.gov.in/content/105_2_Help.aspx?reg=3&amp;lang=1" target="_blank" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white;  text-decoration: none;">Help</a>
+                </li>
+                 <li style="display: inline;">|</li>
+                <li style="display: inline;">
+                    <a class="link" title="Feedback" href="https://factcheck.pib.gov.in/feedbacklogin.aspx" target="_blank" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Feedback</a>
+                </li>
+            </ul>
+        <p class="text-muted text-center" style=' color:#FFF;'>
+        Site is designed and hosted by National Informatics Centre (NIC),Information is provided and updated by Press Information Bureau "A" - Wing, Shastri Bhawan, Dr. Rajendra Prasad Road, New Delhi - 110 001 Phone 23389338<span class="right" style="margin-left:150px;">Last Updated On: 11/09/2025 14:10:13</span>
+
+      </div>
+    </footer>
+</body>
+</html>
