@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form | PIB IFFI Goa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Header */
+    .site-header {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    .site-header .navbar-brand {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+    .site-header .nav-link {
+      color: #ddd !important;
+      transition: 0.3s;
+    }
+    .site-header .nav-link:hover {
+      color: #fff !important;
+    }
+
+    /* Background for form section */
+    .form-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('peacock-image.png') no-repeat center center/cover;
+      position: relative;
+      padding-top: 150px; /* offset for fixed header */
+      padding-bottom: 80px; /* offset for footer */
+    }
+
+    .form-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); /* dark overlay */
+      backdrop-filter: blur(6px);
+      z-index: 1;
+    }
+
+    .form-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    .form-header {
+      background: #7e007b;
+      color: #fff;
+      padding: 18px 20px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .form-body {
+      padding: 30px;
+      color: #fff;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .btn-submit {
+      background: #7e007b;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #520250;
+    }
+    
+    .btn-upload {
+      background: #7e007b;
+      color: #fff;
+      border-radius: 8px;
+      /* padding: 6px 18px; */
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-upload:hover {
+      background: #520250;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .note-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 12px;
+      border-left: 4px solid #ffc107;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    hr {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 12px 0;
+    }
+
+    @media (max-width: 768px) {
+      .form-body {
+        padding: 20px;
+      }
+      .form-header {
+        font-size: 1rem;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <a href="#" class="navbar-brand">PIB IFFI Goa 2025</a>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Events</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Form Section -->
+  <section class="form-section">
+    <div class="form-wrapper">
+      <div class="form-header">MEDIA REGISTRATION FORM</div>
+      <div class="form-body">
+        <p class=" text-warning mb-4">
+          Documents to be uploaded (JPEG/PDF) <br>
+          <span class="text-danger fw-bold">(Size must be greater than 5KB and less than 3MB)</span>
+        </p>
+
+        <form>
+          <!-- Upload Fields with individual upload buttons -->
+          <div class="mb-3 row">
+            <label class="form-label col-sm-8">Photo ID Proof (Aadhaar / License / Passport / Voter ID) *</label>
+            <div class="col-sm-8 col-md-9"><input class="form-control" type="file"></div>
+            <div class="col-sm-4 col-md-3 mt-2 mt-sm-0"><button class="btn btn-upload w-100">Upload</button></div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="form-label col-sm-8">Passport Size Photograph *</label>
+            <div class="col-sm-8 col-md-9"><input class="form-control" type="file"></div>
+            <div class="col-sm-4 col-md-3 mt-2 mt-sm-0"><button class="btn btn-upload w-100">Upload</button></div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="form-label col-sm-8">For Foreign Nationals: Valid Visa</label>
+            <div class="col-sm-8 col-md-9"><input class="form-control" type="file"></div>
+            <div class="col-sm-4 col-md-3 mt-2 mt-sm-0"><button class="btn btn-upload w-100">Upload</button></div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="form-label col-sm-8">Passport Page (Photo + Address)</label>
+            <div class="col-sm-8 col-md-9"><input class="form-control" type="file"></div>
+            <div class="col-sm-4 col-md-3 mt-2 mt-sm-0"><button class="btn btn-upload w-100">Upload</button></div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="form-label col-sm-8">Organisational ID *</label>
+            <div class="col-sm-8 col-md-9"><input class="form-control" type="file"></div>
+            <div class="col-sm-4 col-md-3 mt-2 mt-sm-0"><button class="btn btn-upload w-100">Upload</button></div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="form-label col-sm-8">Editor’s Nomination Letter / Self-Declaration (Freelancers) *</label>
+            <div class="col-sm-8 col-md-9"><input class="form-control" type="file"></div>
+            <div class="col-sm-4 col-md-3 mt-2 mt-sm-0"><button class="btn btn-upload w-100">Upload</button></div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="form-label col-sm-8">PIB / State Govt Accreditation Card</label>
+            <div class="col-sm-8 col-md-9"><input class="form-control" type="file"></div>
+            <div class="col-sm-4 col-md-3 mt-2 mt-sm-0"><button class="btn btn-upload w-100">Upload</button></div>
+          </div>
+
+          <hr>
+          
+          <!-- Proof of Work -->
+        <label class="form-label col-sm-8 fw-bold">Proof of Work:</label>
+        <div class="">
+          <p class="">
+            Upload a file with at least 5 samples of work (articles, photos, videos, links).  
+            The applicant’s name/byline must be visible. False/unverified claims may lead to rejection.
+          </p>
+          <div class="note-box">
+            <strong>Note:</strong> Whatever applicable, the applicant’s byline/name must be clearly visible in the submitted content. If a byline is not visible,
+            a certification letter from the Editor/Head of the Organization confirming authership must be uploaded in the prescribed formate 
+            <a href="#" class="text-warning">see Annexure A</a>. Please ensure all documents are clear and legible. <span class="text-danger fw-bold">False or undefined claims of authership may lead to disqualification from accreditation</span>
+          </div>
+
+        </div>
+          <div class="mb-2 row">
+            <div class="col-sm-8 col-md-6"><input class="form-control" type="file"></div>
+            <div class="col-sm-4 col-md-6 mt-2 mt-sm-0">
+              <div id="links-container">
+                <input class="form-control mb-2" type="url" placeholder="Enter URL">
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary  mb-3" id="add-link">+ Add Another</button>
+          <button type="button" class="btn btn-upload  mb-3">Upload</button>
+
+          <!-- Declaration -->
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="declaration">
+            <label class="form-check-label" for="declaration">
+              I certify that the above information and documents are true to the best of my knowledge.
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <div class="col-12 text-center mt-3">
+            <button type="submit" class="btn-submit w-100">Submit & View</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="mb-0">&copy; 2025 International Film Festival of India | Designed for Demo</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Add multiple proof of work links
+    document.getElementById('add-link').addEventListener('click', function() {
+      const container = document.getElementById('links-container');
+      const input = document.createElement('input');
+      input.type = 'url';
+      input.className = 'form-control mb-2';
+      input.placeholder = 'Enter another URL';
+      container.appendChild(input);
+    });
+  </script>
+</body>
+</html>

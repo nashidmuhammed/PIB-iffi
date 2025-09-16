@@ -1,535 +1,243 @@
-
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" lang="en">
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head><meta name="description" content="Press Information Bureau Accreditation web application ." /><meta name="keywords" content="pib, accreditation, pibcard, central authroized " /><meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript">
-        if (top != self) {
-            top.location = self.location;
-        }
-        function openwindow(urlcode) {
-            var uname;
-            switch (urlcode) {
-                case 1:
-                   // uname = "http://pib.nic.in/prs/accreditationguidelines.pdf";
-  // sss 2-2-2022  uname = "https://static.pib.gov.in/WriteReadData/CMS/accreditationguidelines(1).pdf";
-		//uname = "https://static.pib.gov.in/WriteReadData/userfiles/file/TheCentralMediaAccreditationGuidelines20228V2U.pdf";
-		uname = "https://static.pib.gov.in/WriteReadData/userfiles/file/CentralMediaAccreditationGuidelines2022.pdf.PDFNA9X.PDF";
-                    window.open(uname);
-                    break;
-                case 2:
-                    //uname = "http://pib.nic.in/prs/accreditationguidelinesH.pdf";
-// sss 2-2-2022 uname = "https://static.pib.gov.in/WriteReadData/CMS/accreditationguidelinesH.pdf";
-          /// sss 2-2-2022          window.open(uname);
-                    break;
-                case 3:
-                   //uname = "http://pibaccreditation.nic.in/uhindi/hinhomepage.aspx";
-                                        uname = "/newcode/HomePageHindi.aspx";
-                    //uname = "http://pibaccreditation.nic.in/HomePageHindi.aspx";
-                    location.href = uname;
-                    break;
-                case 4:
-
-                    uname = "/newcode/statusid.aspx";
-                    location.href = uname;
-                    break;
-            }
-
-        }
-   
-    </script>
-    <style>
-          .blink {
-            animation: blinker 1.5s linear infinite;
-		
-        }
-        .link{
-            transition: all 0.03s ease;
-            color:white!important;
-            background-color:transparent !important
-           
-        }
-        .link:hover{
-            
-            color: #333;
-            transform: scale(1.05);
-        }
-
-	    .nav .separator {
-        color: #ccc;
-        font-size: 1.2rem;
-        padding: 0 5px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    .nav li:last-child .separator {
-        display: none;
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
-        }
-    </style>
-   
-<script src="js1/jquery-3.7.1.min.js" type="text/javascript"></script>
-<script src="js1/bootstrap-datepicker.min.js" type="text/javascript"></script>
-<script src="js1/jquery-ui.min.js" type="text/javascript"></script>
-<script src="js1/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <link href="css/masterstylesheet.css" rel="stylesheet" type="text/css" />
-    <title>
-	Login Page
-</title></head>
-<body style='background-color: #f3f7f8;'>
-    <form method="post" action="./login.aspx" id="aspnetForm">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
-</div>
-
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['aspnetForm'];
-if (!theForm) {
-    theForm = document.aspnetForm;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
+    /* Header */
+    .site-header {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
     }
-}
-//]]>
-</script>
-
-
-<script src="/WebResource.axd?d=kEXNR3Kx_7SS3gOYKE8X99NcYhjsvTCfQpDzBY9qLrOAXuoeeBByBPIkpvKmWfx3JHEw6p2NyAYba2yKJZYxR8w8BI8QEaHlPkJZHD-xtMc1&amp;t=638568802371266408" type="text/javascript"></script>
-
-
-<script src="/ScriptResource.axd?d=9Ize-Tfu4e8FFZjgM8JrVfLwBiQ9Le0eDO61dV_5j881ikF0ltYmEGvnfn1Au7y5c9jMG-iW5A11rhwGp2mRgQ0coo5ykaHp5nikxhcSX-yzO9vda2tz6VmwVTDKMaToGMkvL0AlvQcqKjt2hLhcOfk8J_RxW9R93rDCLQQzQq81&amp;t=ffffffffc820c398" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=ejhfNoKsC6H0bCyiM4bK1soEZPS7449un1kQzy6KfcAn5lrjo9DxPBbmk8qhR7lG4ulo6k_hzVYzHvs-gB7GAJAP2pqu1L7G87itbd7MeGaKWawm-ofBAbon7re1le-kvx9FV05KdpzeVoaXjb60SMeAJbI9UAQlYdLiLdUMB_RWBu2cb-uXofMC3bGat2Lx0&amp;t=ffffffffc820c398" type="text/javascript"></script>
-<div class="aspNetHidden">
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="547AEE32" />
-	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="YB/JlkFLxSfeI5NHElvGcx9nYdklcvx0BG8lJJTngt5yHJ7nsAvXuaNQmJqoFxBKxQ0DOFZgqAnUM5juctNraJOMOMoXA2uiETYS71HOJbDttOMufq3YF1u9VLnzNWDc6ZsOsIxuzZy9TNHgbdij/y5lOgL4aMfGsVMkSX6sC977KwB5DUwHzGar65cOBNx80qiGcRnegPMmtGIJgaTvkTNqQv6X8LJ8kRYEK11z/YjAbmRT6zxcYUPrja4WgC4R2iF9O8tdGyokHeyWBLE9cGeaLJ5J5V9caIklRawcj//z4z046lHWuDeK5FhjsAPyn7nU2cbqSfKL4h+VPOy42xszuCvqCBq97i8aCAZKUwbZhQQYiKbNMgb0JABsC+e6" />
-</div>
-    <div class="well" style="margin-bottom: -5px;">
-        <div class="row">
-            <div class="col-md-1 col-sm-4 col-xs-4">
-                <div class="logo">
-                    <img src="newcode/Documents/logosm.png" class="img-responsive" alt="Indian Emblem" />
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-8">
-                <div class="text-left text-primary">
-		<h2 class="text-danger">
-                        पत्र सूचना कार्यालय</h2>
-                    <h1>
-                        Press Information Bureau</h1>
-                    
-                </div>
-            </div>
-
- <div class="col-md-4 col-sm-6 col-xs-12">
-          <img class="img-responsive" src="https://cbpssubscriber.mygov.in/assets/uploads/X0qP81f7lg3YqNFI" alt="MyGov Link" id="_To159l5GKG3cPNYR" onclick="javascript:window.open('https://cbpssubscriber.mygov.in/aff/To159l5GKG3cPNYR')" style="cursor:pointer" onload="javascript:(function(){if(typeof _done == 'undefined' || !_done){this.setAttribute('src', this.getAttribute('src')+'?'+Math.floor((Math.random() * 100) + 1)); _done=true;}}).call(this)" >
-          
-  </div>
-
-        </div>
-        <br />
-
-        <div class="n">
-            <nav class="navbar navbar-inverse" style='background-color: Teal; color: White; border: 1px solid #FFF;
-                box-shadow: 0px 4px 8px #888888;'>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#" style="color:#fff;"><b>Accreditation</b></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        
-        <li><a onclick="openwindow(1)" class="link" style="color:white;" href="#">Guidelines in English</a></li>
-        
-        <li><a onclick="openwindow(4)" class="link" style="color:white;" href="#" class="blink" style=" color: azure;">Track Status</a></li>    
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      	<li><a onclick="openwindow(3)" class="link" style="color:white;" href="#">हिंदी में फॉर्म भरने के लिए यहाँ क्लिक करें</a></li>
-                    
-      </ul>
-    </div>
-  </div>
-</nav>
-        </div>
-        <script type="text/javascript">
-//<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$ContentPlaceHolder1$UpdatePanel1',''], [], [], 90, 'ctl00');
-//]]>
-</script>
-
-        <div class="maincontent" style="display: block;">
-            
-
-    <script src="sha512.js" type="text/javascript"></script>
-
-
-
-
-    <script type="text/javascript" language="javascript">
-
-
-        function DisableRightClick(event) {
-
-            //For mouse right click
-
-            if (event.button == 2) {
-
-                alert("Right Clicking not allowed!");
-
-            }
-
-        }
-        function ClosePage() {
-            alert("Close Page");
-            window.close();
-        }
-        function Encode() {
-            var original_field;
-            var Enc = document.getElementById('ctl00_ContentPlaceHolder1_puk').value;
-            var Mod = document.getElementById('ctl00_ContentPlaceHolder1_md').value;
-            original_field = document.getElementById('ctl00_ContentPlaceHolder1_Txt_user').value;
-
-//alert(Enc);
-            //added on 28-6-2019
-            if (original_field == "") {
-                //commented on 21-12-2021 sss
-                // alert("Enter Username");
-                return;
-            }
-            /////
-
-            document.getElementById('ctl00_ContentPlaceHolder1_user').value = encrypt(original_field, Enc, Mod);
-
-
-            //document.getElementById('ctl00_ContentPlaceHolder1_Txt_user').value = "";
-           // document.getElementById('ctl00_ContentPlaceHolder1_Txt_user').value =encrypt(original_field, Enc, Mod);
-
-            original_field = document.getElementById('ctl00_ContentPlaceHolder1_Txt_pass').value;
-
-
- //document.getElementById('ctl00_ContentPlaceHolder1_pass').value = encrypt(original_field, Enc, Mod);
-            document.getElementById('ctl00_ContentPlaceHolder1_Txt_pass').value = "";
-            document.getElementById('ctl00_ContentPlaceHolder1_pass').value = hex_sha512(original_field);
-
-
-
-
-
-
-        }
-        function encrypt(original_field, Enc, Mod) {
-            encoded_field = "";
-            // loop through all single letter of field
-            for (i = 0; i <= original_field.length - 1; i++) {
-
-                // charCodeAt gives the ASC value of character in position i
-                encoded_field = encoded_field + Mult((original_field.charCodeAt(i)), Enc, Mod) + ","
-            }
-            return encoded_field;
-        }
-        function Mult(x, p, m) {
-            var y = 1;
-            var i = 0;
-            for (i = p; i > 0; i--) {
-                while ((i / 2) == (Math.floor((i / 2)))) {
-                    x = ModFunction((x * x), m);
-                    i = (i / 2);
-                }
-                y = ModFunction((x * y), m);
-            }
-
-            return y;
-        }
-        function ModFunction(Main, Modulus) {
-            var ModFunction = Main - (Math.floor((Main / Modulus)) * Modulus);
-            return ModFunction;
-        }
-
-        function openlogin(ocode) {
-            //location.href = "newuser.aspx";
-            location.href = "~/newuserevent.aspx";
-        }
-
-        
-        function showLogin(method) {
-
-            document.getElementById('loginPannel').style.display = "block";
-
-                document.getElementById('passwordLogin').classList.add('d-none');
-                document.getElementById('passwordLogin').style.display = "block";
-            document.getElementById('otpLogin').classList.add('d-none');
-            if (method === 'password') {
-                document.getElementById('passwordLogin').classList.remove('d-none');
-            } else if (method === 'otp') {
-                document.getElementById('otpLogin').style.display = "block";
-            }
-        }
-    
-
-
-    </script>
-    <input type="hidden" name="ctl00$ContentPlaceHolder1$user" id="ctl00_ContentPlaceHolder1_user" />
-    <input type="hidden" name="ctl00$ContentPlaceHolder1$pass" id="ctl00_ContentPlaceHolder1_pass" />
-
-    <input type="hidden" name="ctl00$ContentPlaceHolder1$puk" id="ctl00_ContentPlaceHolder1_puk" value="12345" />
-    <input type="hidden" name="ctl00$ContentPlaceHolder1$md" id="ctl00_ContentPlaceHolder1_md" value="12345" />
-    <input type="hidden" name="ctl00$ContentPlaceHolder1$ipHide" id="ctl00_ContentPlaceHolder1_ipHide" />
-    <div id="ctl00_ContentPlaceHolder1_UpdatePanel1">
-	
-  <div class="container" style="min-height: 50px; height: auto;">
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2" style="margin-top: 0px; margin-bottom: 50px;">
-            <!-- Banner and Event Details -->
-            <div class="container text-center mt-4" style="display: contents;">
-                <img src="event-banner.jpg" class="img-fluid mb-3" alt="Event Banner" />
-                <h2>Welcome to the Annual Event Registration</h2>
-                <p class="lead">Register to attend the upcoming event with exciting sessions, networking and more.</p>
-            </div>
-
-            <!-- Login Method Selector -->
-            <div class="text-center mb-4" id="loginMethodSelector">
-               <input type="submit" name="ctl00$ContentPlaceHolder1$loginotp" value="Login with OTP" id="ctl00_ContentPlaceHolder1_loginotp" class="btn btn-primary" />
-               <input type="submit" name="ctl00$ContentPlaceHolder1$loginpswd" value="Login with Password" id="ctl00_ContentPlaceHolder1_loginpswd" class="btn btn-primary" />
-                <br/>
-            </div>
-            <br />
-
-            <!-- Login Panel -->
-            <div class="panel panel-primary d-none" id="loginPanel" style='border-radius: 0px; box-shadow: 2px 2px 4px #888888; border-color: Teal;'>
-                <div class="panel-heading text-center" style='background-color: Teal; color: #FFFFFF; border-radius: 0px; box-shadow: 0px 4px 4px #888888;'>
-                    <div id="loginPannel" class='panel-title' >Log In</div>
-                </div>
-                <div class="panel-body">
-                    <span id="ctl00_ContentPlaceHolder1_L_error" style="color:Red;"></span>
-
-                    <!-- Password Login -->
-                    <div id="ctl00_ContentPlaceHolder1_passwordLogin" class="login-section d-none">
-                        <div class="form-group">
-                            <label >User Name:</label>
-                            <input name="ctl00$ContentPlaceHolder1$Txt_user" type="text" id="ctl00_ContentPlaceHolder1_Txt_user" class="form-control" placeholder="User Name" autocomplete="off" />
-                        </div>
-                        <div id="ctl00_ContentPlaceHolder1_txtpswd" class="form-group">
-                            <label>Password:</label>
-                            <input name="ctl00$ContentPlaceHolder1$Txt_pass" type="password" id="ctl00_ContentPlaceHolder1_Txt_pass" class="form-control" placeholder="Enter Password" autocomplete="off" />
-                        </div>
-                        <input type="submit" name="ctl00$ContentPlaceHolder1$Button1" value="Login" onclick="Encode();" id="ctl00_ContentPlaceHolder1_Button1" class="btn btn-primary w-100" />
-                    </div>
-
-                    <!-- OTP Login -->
-                    
-
-                    <!-- Captcha Section -->
-                    
-                </div>
-
-                <div class="panel-footer text-center">
-                    <a id="ctl00_ContentPlaceHolder1_LinkButton1" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton1&#39;,&#39;&#39;)" style="color:Red;font-weight:bold;">
-                        <em>Forgot Password/User Name? Click here to recover.</em>
-                    </a><br />
-                    <a id="ctl00_ContentPlaceHolder1_lnbtn_new" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$lnbtn_new&#39;,&#39;&#39;)" style="color:Green;">
-                        New User? Click Here to Create User ID.
-                    </a>
-                </div>
-                <div class="text-center mt-2">
-                    <button type="button" class="btn btn-link" onclick="goBackToMethodSelection()">&larr; Back</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Circular Iframe 
-    <iframe src="circular.html" style="width:100%;height:620px;"></iframe>-->
-
-    <script type="text/javascript">
-        function showLoginMethod(method) {
-            document.getElementById('loginMethodSelector').classList.add('d-none');
-            document.getElementById('loginPanel').classList.remove('d-none');
-            document.getElementById('passwordLogin').classList.add('d-none');
-            document.getElementById('otpLogin').classList.add('d-none');
-            if (method === 'password') {
-                document.getElementById('passwordLogin').classList.remove('d-none');
-            } else {
-                document.getElementById('otpLogin').classList.remove('d-none');
-            }
-        }
-
-        function goBackToMethodSelection() {
-            document.getElementById('loginMethodSelector').classList.remove('d-none');
-            document.getElementById('loginPanel').classList.add('d-none');
-        }
-    </script>
-
-            <div id="ctl00_ContentPlaceHolder1_hdiv">
-            </div>
-
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#rmhover").click(function () {
-                        $(this).fadeOut();
-                        $("#rmpopup").fadeOut();
-                    });
-
-                    $("#rmclose").click(function () {
-                        $("#rmhover").fadeOut();
-                        $("#rmpopup").fadeOut();
-                    });
-                    setTimeout(function () { $("#rmhover").fadeOut() }, 15000);
-                    setTimeout(function () { $("#rmpopup").fadeOut() }, 15000);
-
-                });
-            </script>
-            <style type="text/css">
-                #rmhover {
-                    position: fixed;
-                    background: #000;
-                    width: 100%;
-                    height: 100%;
-                    opacity: .6;
-                }
-
-                #rmpopup {
-                    position: absolute;
-                    width: 50%;
-                    border: 5px solid #fff;
-                    background: #fff;
-                    left: 24%;
-                    top: 26%;
-                    border-radius: 5px;
-                    text-align: center;
-                    box-shadow: 0 0 10px 0 #000;
-                    z-index: 1000;
-                }
-
-                #rmclose {
-                    position: absolute;
-                    background: black;
-                    color: white;
-                    right: -15px;
-                    top: -15px;
-                    border-radius: 50%;
-                    width: 32px;
-                    height: 32px;
-                    line-height: 30px;
-                    text-align: center;
-                    font-size: 11px;
-                    font-weight: bold;
-                    font-family: 'Arial Black', Arial, sans-serif;
-                    cursor: pointer;
-                    box-shadow: 0 0 10px 0 #000;
-                }
-                .login-section {
-        animation: fadeIn 0.3s ease-in-out;
+    .site-header .navbar-brand {
+      font-weight: bold;
+      color: #fff;
+      font-size: 1.3rem;
+    }
+    .site-header .nav-link {
+      color: #ddd !important;
+      transition: 0.3s;
+    }
+    .site-header .nav-link:hover {
+      color: #fff !important;
     }
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+    /* Background for form section */
+    .form-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('peacock-image.png') no-repeat center center/cover;
+      position: relative;
+      padding-top: 120px; /* offset for header */
+      padding-bottom: 80px; /* offset for footer */
     }
-            </style>
-        
-</div>
 
-        </div>
+    .form-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+      z-index: 1;
+    }
+
+    /* Login card */
+    .login-card {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      overflow: hidden;
+      color: #fff;
+    }
+    .login-header {
+      background: #7e007b;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .login-header h4 {
+      margin: 0;
+      font-weight: bold;
+    }
+    .form-control {
+      border-radius: 8px;
+    }
+    .btn-custom {
+      background: #7e007b;
+      color: #fff;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn-custom:hover {
+      background: #520250;
+    }
+    .extra-links {
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    .extra-links a {
+      text-decoration: none;
+    }
+
+    /* Toggle buttons */
+    .nav-pills .nav-link {
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-weight: 500;
+      transition: 0.3s;
+      color: #e6e6e6;
+      border: 2px solid #7e007b;
+      margin: 0 5px;
+    }
+    .nav-pills .nav-link.active {
+      background: #7e007b;
+      color: #fff;
+      border-color: #7e007b;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+    .nav-pills .nav-link:hover {
+      background: #e6f3f3;
+      color: #004d4d;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      z-index: 10;
+    }
+    .site-footer a {
+      color: #ddd;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+    .site-footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <a href="#" class="navbar-brand">IFFI Goa 2025</a>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    </form>
+  </header>
 
-<div class="container-fluid text-center wimhover" style="margin-top: 36px; background-color: white; color: #fff; padding: 10px;">
-        <div class="row">
-            <div class="col-md-6">
-                <a title="Web Information Manager" href="https://www.pib.gov.in/content/3709_5_pib.nic.in.aspx">
-                    <h4  style="text-align: right;">Web Information Manager</h4>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="/Documents/Acrediation2.pdf" target="_blank">
-                    <img src="/images/GIGW_logo.png" title="GIGW" alt="GIGW Logo" style="max-height: 50px;display: flex; align-items: start; margin-left: 30px;" />
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-
-    
-
-
-   
-                
-
-<script src="js/jsnew/jquery.min.js"></script>
-
-
- 
- 
-<div id="ctl00_ContentPlaceHolder2_ctl00_divContent"><div class='container-fluid' style='background-color:#367588; width:100%; padding: 15px 20px'><div class='row'><div class='col-md-6 col-xs-12'><h4 style='color:white; margin-left:30%;'><b>RTI and Contact Us</b></h4><table style='width:100%; margin-left:30%; text-align: left;'><tr data-index='0'><td style='padding:5px;'><a href='https://pib.gov.in/content/3663_5_pib.gov.in.aspx?reg=3&lang=1' target='_blank' title='WHO’S WHO AT PIB' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">WHO’S WHO AT PIB</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/jul/doc2025716588201.pdf' target='_blank' title='Work Allocation' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Work Allocation</a></td></tr><tr data-index='1'><td style='padding:5px;'><a href='https://pib.gov.in/content/3664_5_pib.gov.in.aspx?reg=3&lang=1' target='_blank' title='Telephone Number of Regional Branch Offices of PIB ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Telephone Number of Regional Branch Offices of PIB </a></td><td style='padding:2px;'><a href='' target='_blank' title='Web Information Manager ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Web Information Manager </a></td></tr><tr data-index='2'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202552549601.pdf' target='_blank' title='Public Grievance Officer' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Public Grievance Officer</a></td><td style='padding:2px;'><a href='https://pib.gov.in/content/3714_5_Pib.gov.in.aspx?reg=3&lang=1' target='_blank' title='Telephone Nos of PIB Officers of Hqrs' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Telephone Nos of PIB Officers of Hqrs</a></td></tr><tr data-index='3'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/aug/doc2025828622501.pdf' target='_blank' title='CPIOs Appellate Authority List' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">CPIOs Appellate Authority List</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558552001.pdf' target='_blank' title='RTI Transparency Audit Compliance' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">RTI Transparency Audit Compliance</a></td></tr><tr data-index='4'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/apr/doc2024416331001.pdf' target='_blank' title='Information Manual' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Information Manual</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/apr/doc2025417541601.pdf' target='_blank' title='Delegation of financial powers' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Delegation of financial powers</a></td></tr><tr data-index='5'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202559552801.pdf' target='_blank' title='Citizen Charter' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Citizen Charter</a></td><td style='padding:2px;'><a href='https://www.davp.nic.in/writereaddata/announce/Adv165810112023.pdf' target='_blank' title='Link for RFP uploaded on CBC website for Printing Publishing PIB handbook General Elections 2024  ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Link for RFP uploaded on CBC website for Printing Publishing PIB handbook General Elections 2024  </a></td></tr><tr data-index='6'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc2025513553901.pdf' target='_blank' title='Transparency Audit' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Transparency Audit</a></td><td style='padding:2px;'><a href='https://pgportal.gov.in/' target='_blank' title='Portal for Public Grievance Submission' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Portal for Public Grievance Submission</a></td></tr><tr data-index='7'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/apr/doc2025417541401.pdf' target='_blank' title='Allocation Budget' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Allocation Budget</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc2025529559801.pdf' target='_blank' title='Amendment of RRs for Group C Posts' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Amendment of RRs for Group C Posts</a></td></tr><tr data-index='8'><td style='padding:5px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/feb/doc2025214501901.pdf' target='_blank' title='Internal Complaints Committee' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Internal Complaints Committee</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/apr/doc202445328601.pdf' target='_blank' title='Amendment of RRs for Group A and Group B posts ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Amendment of RRs for Group A and Group B posts </a></td></tr><tr data-index='9'><td style='padding:5px;'><a href='https://pib.gov.in/content/3705_5_pib.nic.in.aspx' target='_blank' title='Liaison Officer' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Liaison Officer</a></td><td style='padding:2px;'><a href='https://static.pib.gov.in/WriteReadData/specificdocs/documents/2024/dec/doc20241220475101.pdf' target='_blank' title='Transfer Policy for CG-II &amp; MTS of PIB Regional, Branch Offices' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Transfer Policy for CG-II &amp; MTS of PIB Regional, Branch Offices</a></td></tr> <td style='font-weight:900;  font-size:large'><a href='https://pib.gov.in/content/24_5_more.aspx?reg=3&lang=1' style='color: White'; onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" target='_blank'>More</a></td></table></div><div class='col-md-6 col-xs-12'><h4 style='color:white; text-align:left; margin-left: 40%;'><b>GOI Links</b></h4><table style='width:50%; margin-left:40%; text-align: left;'><tr><td style='padding:5px;'><a href='https://mib.gov.in/' target='_blank' title='Ministry of Information and Broadcasting' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Information and Broadcasting</a></td></tr><tr><td style='padding:5px;'><a href='https://agriwelfare.gov.in/' target='_blank' title='Ministry of Agriculture &amp; Farmers Welfare' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Agriculture &amp; Farmers Welfare</a></td></tr><tr><td style='padding:5px;'><a href='http://ministryoftextiles.gov.in/' target='_blank' title='Ministry of Textiles' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Textiles</a></td></tr><tr><td style='padding:5px;'><a href='https://commerce.gov.in/' target='_blank' title='Ministry of Commerce &amp; Industry ' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Commerce &amp; Industry </a></td></tr><tr><td style='padding:5px;'><a href='https://mod.gov.in/' target='_blank' title='Ministry of Defence' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Defence</a></td></tr><tr><td style='padding:5px;'><a href='https://finmin.gov.in/' target='_blank' title='Ministry of Finance' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Finance</a></td></tr><tr><td style='padding:5px;'><a href='https://www.mohfw.gov.in/' target='_blank' title='Ministry of Health and Family Welfare' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Health and Family Welfare</a></td></tr><tr><td style='padding:5px;'><a href='https://mha.gov.in/' target='_blank' title='Ministry of Home Affairs' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Home Affairs</a></td></tr><tr><td style='padding:5px;'><a href='http://mohua.gov.in/' target='_blank' title='Ministry of Housing and Urban Affairs' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Housing and Urban Affairs</a></td></tr><tr><td style='padding:5px;'><a href='https://www.education.gov.in/' target='_blank' title='Ministry of Education' onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" style='color:white;' onmouseover="this.style.color='#f1c40f'" onmouseout="this.style.color='white'">Ministry of Education</a></td></tr> <td style='font-weight:900;  font-size:large'><a href='https://pib.gov.in/content/25_5_more.aspx?reg=3&lang=1' style='color: white'; onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop')" target='_blank'>More</a></td></table></div></div></div></div>
-
-
-   
-           
-            
-
-
-    <footer class="footer" style="background-color: Teal; margin-bottom: 0; color: #FFFFFF;
-        clear: both; box-shadow: 2px 0px 8px #888888; border: 1px solid #FFFFFF;">
-
-      <div class="container-fluid">
-<ul style="list-style: none; padding: 0; display: flex; gap: 10px; align-items: center; justify-content: center;">
-                <li style="display: inline;">
-                    <a class="link" title="About us" href="https://pib.gov.in/aboutpibn.aspx" target="_blank" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">About us</a>
-                </li>
-                <li style="display: inline;">|</li>
-                <li style="display: inline;">
-                    <a class="link" title="Terms &amp; Conditions" target="_blank" href="Documents/TermsandConditions.pdf" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Terms &amp; Conditions</a>
-                </li>
-                <li style="display: inline;">|</li>
-                <li style="display: inline;">
-                    <a class="link" title="Copyright Policy" target="_blank" href="Documents/CopyrightPolicy.pdf" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Copyright Policy</a>
-                </li>
-                <li style="display: inline;">|</li>
-                <li style="display: inline;">
-                    <a class="link" title="Privacy Policy" target="_blank" href="Documents/PrivacyPolicy.pdf" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Privacy Policy</a>
-                </li>
-                <li style="display: inline;">|</li>
-                <li style="display: inline;">
-                    <a title="Hyperlinking Policy" target="_blank" href="Documents/HyperlinkingPolicy.pdf" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Hyperlinking Policy</a>
-                </li>
-                <li style="display: inline;">|</li>
-                <li style="display: inline;">
-                    <a class="link" title="National Portal" href="https://www.india.gov.in/" target="_blank" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">National Portal</a>
-                </li>
-                <li style="display: inline;">|</li>
-                <li style="display: inline; ">
-                    <a class="link" title="Help" href="https://pib.gov.in/content/105_2_Help.aspx?reg=3&amp;lang=1" target="_blank" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white;  text-decoration: none;">Help</a>
-                </li>
-                 <li style="display: inline;">|</li>
-                <li style="display: inline;">
-                    <a class="link" title="Feedback" href="https://factcheck.pib.gov.in/feedbacklogin.aspx" target="_blank" onclick="return confirm('This link shall take you to an external website. Click OK to continue. Click Cancel to stop');" style="color: white; text-decoration: none;">Feedback</a>
-                </li>
-            </ul>
-        <p class="text-muted text-center" style=' color:#FFF;'>
-        Site is designed and hosted by National Informatics Centre (NIC),Information is provided and updated by Press Information Bureau "A" - Wing, Shastri Bhawan, Dr. Rajendra Prasad Road, New Delhi - 110 001 Phone 23389338<span class="right" style="margin-left:150px;">Last Updated On: 16/09/2025 10:00:02</span>
-
+  <!-- Login Section -->
+  <section class="form-section">
+    <div class="login-card">
+      <div class="login-header">
+        <h2 class="fw-bold">Annual Event Login</h2>
+        <p class="mb-0 ">Welcome back! Please login to continue</p>
+        <p class="mb-0 small text-white-50">Register to attend the upcoming event with exiting sessions, networking and more.</p>
       </div>
-    </footer>
+      
+      <div class="p-4">
+        <!-- Toggle Buttons -->
+        <ul class="nav nav-pills mb-3 justify-content-center" id="loginTabs" role="tablist">
+          <li class="nav-item mb-2" role="presentation">
+            <button class="nav-link active" id="otp-tab" data-bs-toggle="pill" data-bs-target="#otp-login" type="button" role="tab">
+              <i class="fas fa-key"></i> Login with OTP
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="password-tab" data-bs-toggle="pill" data-bs-target="#password-login" type="button" role="tab">
+              <i class="fas fa-lock"></i> Login with Password
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+          <!-- OTP Login -->
+          <div class="tab-pane fade show active" id="otp-login" role="tabpanel">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">User Name / Email</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  <input type="text" class="form-control" placeholder="Enter User Name or Email">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-custom w-100">Send OTP</button>
+            </form>
+          </div>
+
+          <!-- Password Login -->
+          <div class="tab-pane fade" id="password-login" role="tabpanel">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">User Name</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  <input type="text" class="form-control" placeholder="Enter User Name">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  <input type="password" class="form-control" placeholder="Enter Password">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-custom w-100">Login</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Extra Links -->
+        <div class="extra-links text-center mt-3">
+          <p class="mb-1"><a class="text-warning" href="#">Forgot Password/User Name? Click here</a></p>
+          <p class="mb-1"><a class="text-light" href="#">New User? Click here to Create User ID</a></p>
+          <p><a href="#" class="text-white-50">← Back</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="mb-1">&copy; 2025 International Film Festival of India</p>
+    <p class="mb-0">
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms</a> | 
+      <a href="#">Help</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
