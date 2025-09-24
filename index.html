@@ -180,6 +180,103 @@
         padding-top: 8rem !important;
     }
     }
+
+
+/* Header nav */
+ .site-header {
+    position: fixed;
+    top: 20px; 
+    left: 0;
+    width: 100%;
+    z-index: 1045;
+    background: transparent; /* outside transparent */
+    display: flex;
+    justify-content: center;
+    pointer-events: none; /* allow clicks only inside pill */
+  }
+
+  .nav-container {
+    background: rgba(255, 255, 255, 0.95); /* pill slightly translucent */
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25), inset 0 -3px 6px rgba(0,0,0,0.1);
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+    pointer-events: auto; /* enable interaction */
+  }
+
+  .nav-container:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35), inset 0 -4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+  }
+
+  .logo-img {
+    height: 55px;
+    margin: 0 12px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .logo-img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+  }
+
+  .menu-btn {
+    background: linear-gradient(145deg, #f8f9fa, #e0e0e0);
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 4px 6px 12px rgba(0,0,0,0.25), inset -2px -3px 5px rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .menu-btn:hover {
+    background: linear-gradient(145deg, #e0e0e0, #f8f9fa);
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.3), inset -2px -3px 6px rgba(255,255,255,0.8);
+  }
+
+  .menu-btn i {
+    margin-right: 6px;
+    font-size: 18px;
+  }
+
+  /* ✅ Responsive Adjustments */
+  @media (max-width: 991px) {
+    .nav-container {
+      flex-direction: column;
+      border-radius: 25px;
+      padding: 15px;
+    }
+
+    .logo-img {
+      height: 45px;
+      margin: 8px;
+    }
+
+    .menu-btn {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .logo-img {
+      height: 35px;
+      margin: 6px;
+    }
+
+    .menu-btn {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+
+  /* END header nav style */
   </style>
 </head>
 
@@ -263,7 +360,7 @@
 <!-- Text Resize Ends -->
 
 
-<div class="col-lg-12">
+<!-- <div class="col-lg-12">
     <div class="logo-section "id="menu">
         <div class="container">
             <div class="top-logo ">
@@ -291,9 +388,7 @@
                 <a href="https://films.wavesbazaar.com/" target="_blank">
                     <img src="footer-logo.png" alt="Film-Bazar" loading="lazy">
                 </a>
-                <!-- <a href="https://www.goa.gov.in/" target="_blank">
-                    <img src="Emblem_of_Goa (1).svg" alt="goa-govt-logo" loading="lazy">
-                </a> -->
+          
                 
                 <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
     aria-controls="offcanvasTop"> 
@@ -306,9 +401,32 @@
         </div>
     </div>
 </div>
+ -->
 
+<!-- Header -->
+<header class="site-header py-3" id="menu">
+  <div class="container d-flex justify-content-center">
+    <nav class="nav-container d-flex align-items-center justify-content-between flex-wrap">
+      
+      <!-- Logos -->
+      <ul class="nav justify-content-center align-items-center flex-wrap mb-2 mb-md-0">
+        <li class="nav-item"><img src="assets/logos/MIB.png" alt="MIB" class="logo-img" alt="MIB" class="logo-img"></li>
+        <li class="nav-item"><img src="assets/logos/IFFI56.png" alt="IFFI" class="logo-img"></li>
+        <li class="nav-item"><img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img"></li>
+        <li class="nav-item"><img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img"></li>
+        <li class="nav-item"><img src="assets/logos/esg.png" alt="ESG" class="logo-img"></li>
+        <li class="nav-item"><img src="assets/logos/footer-logo.png" alt="Film Bazaar" class="logo-img"></li>
+      </ul>
 
+      <!-- MENU Button -->
+      <button class="menu-btn d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+    aria-controls="offcanvasTop">
+        <i class="bi bi-grid-3x3-gap-fill"></i> MENU
+      </button>
 
+    </nav>
+  </div>
+</header>
 
 
 <section>
