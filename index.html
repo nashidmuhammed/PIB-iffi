@@ -183,25 +183,31 @@
 
 
 /* Header nav */
- .site-header {
+ /* 🔒 Fixed Header */
+  .site-header {
     position: fixed;
-    top: 20px; 
+    top: 20px;
     left: 0;
     width: 100%;
     z-index: 1045;
-    background: transparent; /* outside transparent */
-    display: flex;
-    justify-content: center;
-    pointer-events: none; /* allow clicks only inside pill */
+    background: transparent;
+    pointer-events: none; /* clicks only inside child containers */
   }
 
+  .site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: auto; /* enable interaction */
+  }
+
+  /* Pill Logos */
   .nav-container {
-    background: rgba(255, 255, 255, 0.95); /* pill slightly translucent */
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 50px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25), inset 0 -3px 6px rgba(0,0,0,0.1);
-    padding: 15px 30px;
+    padding: 12px 25px;
     transition: all 0.3s ease;
-    pointer-events: auto; /* enable interaction */
   }
 
   .nav-container:hover {
@@ -221,11 +227,12 @@
     filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
   }
 
+  /* MENU Button */
   .menu-btn {
     background: linear-gradient(145deg, #f8f9fa, #e0e0e0);
     border: none;
     border-radius: 15px;
-    padding: 10px 20px;
+    padding: 12px 22px;
     font-weight: 700;
     font-size: 16px;
     box-shadow: 4px 6px 12px rgba(0,0,0,0.25), inset -2px -3px 5px rgba(255,255,255,0.6);
@@ -246,10 +253,16 @@
 
   /* ✅ Responsive Adjustments */
   @media (max-width: 991px) {
+    .site-header .container {
+      flex-direction: column;
+      gap: 12px;
+    }
+
     .nav-container {
       flex-direction: column;
       border-radius: 25px;
-      padding: 15px;
+      padding: 12px 18px;
+      order: 1; /* logos first */
     }
 
     .logo-img {
@@ -258,7 +271,7 @@
     }
 
     .menu-btn {
-      margin-top: 10px;
+      order: 2;
       width: 100%;
       justify-content: center;
     }
@@ -404,28 +417,62 @@
  -->
 
 <!-- Header -->
-<header class="site-header py-3" id="menu">
-  <div class="container d-flex justify-content-center">
+<header class="site-header py-3 px-3" id="menu">
+  <div class="container d-flex justify-content-between align-items-center px-5">
     <nav class="nav-container d-flex align-items-center justify-content-between flex-wrap">
       
       <!-- Logos -->
       <ul class="nav justify-content-center align-items-center flex-wrap mb-2 mb-md-0">
-        <li class="nav-item"><img src="assets/logos/MIB.png" alt="MIB" class="logo-img" alt="MIB" class="logo-img"></li>
-        <li class="nav-item"><img src="assets/logos/GovtGoa.png" alt="MIB" class="logo-img" alt="GoaGov" class="logo-img"></li>
-        <li class="nav-item"><img src="assets/logos/IFFI56.png" alt="IFFI" class="logo-img"></li>
-        <li class="nav-item"><img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img"></li>
-        <li class="nav-item"><img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img"></li>
-        <li class="nav-item"><img src="assets/logos/esg.png" alt="ESG" class="logo-img"></li>
-        <li class="nav-item"><img src="assets/logos/footer-logo.png" alt="Film Bazaar" class="logo-img"></li>
+        <li class="nav-item">
+            <a href="https://mib.gov.in" target="_blank">
+                <img src="assets/logos/MIB.png" alt="MIB" class="logo-img" alt="MIB" class="logo-img">
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="https://www.goa.gov.in/" target="_blank">
+                <img src="assets/logos/GovtGoa.png" alt="MIB" class="logo-img" alt="GoaGov" class="logo-img">
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="https://www.iffigoa.org" target="_blank">
+                <img src="assets/logos/IFFI56.png" alt="IFFI" class="logo-img">
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="#" target="_blank">
+                <img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img">
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="https://www.nfdcindia.com/" target="_blank">
+                <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img">
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="https://esg.co.in/" target="_blank">
+                <img src="assets/logos/esg.png" alt="ESG" class="logo-img">
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="https://films.wavesbazaar.com/" target="_blank">
+                <img src="assets/logos/footer-logo.png" alt="Film Bazaar" class="logo-img">
+            </a>
+        </li>
       </ul>
 
+    </nav>
       <!-- MENU Button -->
-      <!-- <button class="menu-btn d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+      <button class="menu-btn d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
     aria-controls="offcanvasTop">
         <i class="bi bi-grid-3x3-gap-fill"></i> MENU
-      </button> -->
+      </button>
 
-    </nav>
   </div>
 </header>
 
