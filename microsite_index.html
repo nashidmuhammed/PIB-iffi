@@ -4,42 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IFFI 55 – 55th International Film Festival of India | Goa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
   <style>
     body, html {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      background: #000;
+      font-family: 'Poppins', sans-serif;
+      color: #2b0030;
+      background: #fdf9ff;
     }
-    
+
+    /* Header */
     .site-header {
-        /* background: transparent; */
       position: fixed;
-      top: 20px;
+      top: 0;
       left: 0;
       width: 100%;
       z-index: 1045;
       display: flex;
       justify-content: center;
-      /* pointer-events: none; */
-      background: linear-gradient(90deg, #000000, #1c1b18, #3b2a12);
-      font-family: "Poppins", sans-serif;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-      color: #f7d46c;
+      background: linear-gradient(90deg, #7e007b, #a74aa5);
+      border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(126, 0, 123, 0.2);
     }
-     /* .site-header {
-      background: linear-gradient(90deg, #000000, #1c1b18, #3b2a12);
-      color: #f7d46c;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-      font-family: "Poppins", sans-serif;
-    } */
-     /* Navigation Menu */
+
     .site-header .nav-link {
-      color: #d8d8d8;
+      color: #fff;
       font-weight: 500;
       letter-spacing: 0.6px;
       margin-right: 1rem;
@@ -52,7 +45,6 @@
       color: #ffd86b;
     }
 
-    /* Underline Hover Effect */
     .site-header .nav-link::after {
       content: "";
       position: absolute;
@@ -60,7 +52,7 @@
       bottom: -4px;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #d4af37, #ffcc70);
+      background: linear-gradient(90deg, #ffd86b, #fff1b8);
       transition: width 0.3s ease;
     }
 
@@ -69,20 +61,151 @@
       width: 100%;
     }
 
-    /* Social Media Icons */
     .social-icons a {
-      color: #f7d46c;
+      color: #ffd86b;
       font-size: 1.2rem;
       margin-left: 0.6rem;
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .social-icons a:hover {
-      transform: translateY(-3px) scale(1.1);
-      color: #ffffff;
+      transform: translateY(-3px);
+      color: #fff;
     }
 
-    /* Responsive Adjustments */
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #fff, #f5e6f9);
+      padding: 160px 0 120px 0;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .hero-banner h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #7e007b;
+      margin-bottom: 20px;
+    }
+
+    .hero-banner p {
+      font-size: 1.25rem;
+      color: #4a0048;
+    }
+
+    /* Main Carousel */
+    .carousel-content .carousel-item {
+      height: 500px;
+    }
+
+    .carousel-content .carousel-item img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    .carousel-caption {
+      background: rgba(126, 0, 123, 0.65);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .carousel-caption h5 {
+      font-size: 1.75rem;
+      color: #ffd86b;
+    }
+
+    .carousel-caption p {
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    /* Recent Stories */
+    .stories-section {
+      padding: 80px 0;
+      background: #fdf9ff;
+    }
+
+    .stories-section h2 {
+      color: #7e007b;
+      font-weight: 600;
+    }
+
+    .stories-section .card {
+      background: #fff;
+      border: 1px solid rgba(126, 0, 123, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stories-section .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(126, 0, 123, 0.2);
+    }
+
+    .stories-section .card-title {
+      color: #7e007b;
+    }
+    .stories-section .card img {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .btn-outline-warning {
+      color: #7e007b;
+      border-color: #7e007b;
+    }
+
+    .btn-outline-warning:hover {
+      background: #7e007b;
+      color: #fff;
+      border-color: #7e007b;
+    }
+
+    /* Footer */
+    .iffi-footer {
+      background: linear-gradient(90deg, #7e007b, #a74aa5);
+      color: #fff;
+      border-top: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .iffi-footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #f9e9ff;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .iffi-footer p:hover {
+      color: #ffd86b;
+    }
+
+    .text-gold {
+      color: #ffd86b;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid #ffd86b;
+      color: #ffd86b;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      background-color: #ffd86b;
+      color: #7e007b;
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px rgba(255, 216, 107, 0.6);
+    }
+
     @media (max-width: 768px) {
       .site-header .container {
         flex-direction: column;
@@ -92,123 +215,6 @@
         justify-content: center !important;
         margin-bottom: 0.5rem;
       }
-    }
-
-    .logo-img {
-      height: 55px;
-      margin: 0 12px;
-      object-fit: contain;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-    .logo-img:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
-    }
-    /* Hero Banner */
-    .hero-banner {
-      background: linear-gradient(145deg, #1b1b1b, #111);
-      padding: 160px 0 120px 0;
-      text-align: center;
-      position: relative;
-    }
-    .hero-banner h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #d4af37; /* gold tint */
-      margin-bottom: 20px;
-    }
-    .hero-banner p {
-      font-size: 1.25rem;
-      color: #ddd;
-    }
-    /* Main carousel */
-    .carousel-content .carousel-item {
-      height: 500px;
-    }
-    .carousel-content .carousel-item img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-      opacity: 0.85;
-    }
-    .carousel-caption {
-      background: rgba(0,0,0,0.5);
-      border-radius: 8px;
-      padding: 20px;
-    }
-    .carousel-caption h5 {
-      font-size: 1.75rem;
-      color: #d4af37;
-    }
-    .carousel-caption p {
-      font-size: 1rem;
-      color: #eee;
-    }
-    /* Recent stories carousel */
-    .stories-section {
-      padding: 80px 0;
-      background: #111;
-    }
-    .stories-section .card {
-      background: #1a1a1a;
-      border: none;
-    }
-    .stories-section .card img {
-      height: 180px;
-      object-fit: cover;
-    }
-    .stories-section .card-title {
-      color: #d4af37;
-    }
-    /* Press‐style footer section */
-    .iffi-footer {
-        /* background: linear-gradient(90deg, #002d29, #0a0f1c, #120f1c); */
-        background: linear-gradient(90deg, #000000, #1c1b18, #3b2a12);
-        color: #f4f4f4;
-        border-top: 1px solid rgba(255, 215, 0, 0.1);
-        font-family: "Poppins", sans-serif;
-    }
-
-    .iffi-footer p {
-        margin: 0;
-        font-size: 0.9rem;
-        letter-spacing: 0.3px;
-        color: #d7d7d7;
-    }
-
-    .text-gold {
-        color: #ffd86b;
-    }
-
-    .social-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: 1px solid #ffd86b;
-    color: #ffd86b;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-  }
-
-  .social-btn:hover {
-    background-color: #ffd86b;
-    color: #000;
-    transform: translateY(-3px);
-    box-shadow: 0 0 10px rgba(255, 216, 107, 0.6);
-  }
-
-  .footer-p {
-    cursor: pointer !important;
-    }
-  .footer-p:hover {
-        color: #ffd86b !important;
-    }
-
-    
-    @media (max-width: 768px) {
       .hero-banner h1 {
         font-size: 2.25rem;
       }
@@ -217,44 +223,26 @@
       }
       .iffi-footer {
         text-align: center;
-        }
-        .footer-links {
+      }
+      .footer-links {
         margin-bottom: 1.5rem;
-        }
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Header / Navbar -->
-<!-- <header class="site-header py-3">
-  <div class="container d-flex justify-content-center">
-    <nav class="nav-container d-flex align-items-center justify-content-between flex-wrap">
-      <ul class="nav justify-content-center align-items-center flex-wrap mb-2 mb-md-0">
-        <li class="nav-item"><a href="https://mib.gov.in" target="_blank"><img src="assets/logos/MIB.png" alt="MIB" class="logo-img"></a></li>
-        <li class="nav-item"><a href="https://www.goa.gov.in/" target="_blank"><img src="assets/logos/GovtGoa.png" alt="GoaGov" class="logo-img"></a></li>
-        <li class="nav-item"><a href="https://www.iffigoa.org" target="_blank"><img src="assets/logos/IFFI56.png" alt="IFFI" class="logo-img"></a></li>
-        <li class="nav-item"><a href="#" target="_blank"><img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img"></a></li>
-        <li class="nav-item"><a href="https://www.nfdcindia.com/" target="_blank"><img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img"></a></li>
-        <li class="nav-item"><a href="https://esg.co.in/" target="_blank"><img src="assets/logos/esg.png" alt="ESG" class="logo-img"></a></li>
-      </ul>
-    </nav>
-  </div>
-</header> -->
-
+  <!-- Header -->
   <header class="site-header py-2">
     <div class="container d-flex justify-content-between align-items-center flex-wrap">
-      
-      <!-- Navigation Menu -->
       <nav class="nav justify-content-center">
         <a class="nav-link active" href="#">HOME</a>
         <a class="nav-link" href="#">IFFI STORIES</a>
         <a class="nav-link" href="#">MEDIA INTERACTIONS</a>
         <a class="nav-link" href="#">IFFI THROUGH OUR LENS</a>
         <a class="nav-link" href="#">CONNECT WITH US</a>
+        <a class="nav-link" href="#">IFFI MAP</a>
       </nav>
-
-      <!-- Social Media Icons -->
       <div class="social-icons d-flex align-items-center">
         <a href="#"><i class="bi bi-twitter-x"></i></a>
         <a href="#"><i class="bi bi-youtube"></i></a>
@@ -262,59 +250,58 @@
         <a href="#"><i class="bi bi-instagram"></i></a>
         <a href="#"><i class="bi bi-whatsapp"></i></a>
       </div>
-
     </div>
   </header>
 
-<!-- Hero Banner -->
-<section class="hero-banner">
-  <div class="container">
-    <h1>55th International Film Festival of India – 2025</h1>
-    <p>Celebrating Cinema, Creativity & Cultural Exchange in Goa</p>
-  </div>
-</section>
-
-<!-- Main Carousel -->
-<section class="carousel-content">
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460601.png" alt="Opening Ceremony" class="d-block w-100">
-        <div class="carousel-caption">
-          <h5>Opening Ceremony – Gala Night</h5>
-          <p>Star-studded evening at Dr. Shyama Prasad Mukherjee Stadium, Goa.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460801.png" alt="Red Carpet" class="d-block w-100">
-        <div class="carousel-caption">
-          <h5>Red Carpet Moments</h5>
-          <p>International luminaries, filmmakers & stars walk the red carpet at IFFI 55.  [oai_citation:0‡Wikipedia](https://en.wikipedia.org/wiki/55th_International_Film_Festival_of_India?utm_source=chatgpt.com)</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460101.png" alt="Closing Ceremony" class="d-block w-100">
-        <div class="carousel-caption">
-          <h5>Closing Ceremony & Awards Night</h5>
-          <p>The grand finale celebrating global cinema and award winners.  [oai_citation:1‡Press Information Bureau](https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2078796&utm_source=chatgpt.com)</p>
-        </div>
-      </div>
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1>55th International Film Festival of India – 2025</h1>
+      <p>Celebrating Cinema, Creativity & Cultural Exchange in Goa</p>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section>
+  </section>
 
-<!-- Recent Stories Carousel -->
+  <!-- Carousel -->
+  <section class="carousel-content">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460601.png" alt="Opening Ceremony">
+          <div class="carousel-caption">
+            <h5>Opening Ceremony – Gala Night</h5>
+            <p>Star-studded evening at Dr. Shyama Prasad Mukherjee Stadium, Goa.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460801.png" alt="Red Carpet">
+          <div class="carousel-caption">
+            <h5>Red Carpet Moments</h5>
+            <p>International luminaries, filmmakers & stars walk the red carpet at IFFI 55.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460101.png" alt="Closing Ceremony">
+          <div class="carousel-caption">
+            <h5>Closing Ceremony & Awards Night</h5>
+            <p>The grand finale celebrating global cinema and award winners.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Recent Stories Carousel -->
 <section class="stories-section">
   <div class="container">
-    <h2 class="text-center mb-5" style="color:#d4af37;">Recent Stories</h2>
+    <h2 class="text-center mb-5">Recent Stories</h2>
     <div id="storiesCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -362,38 +349,35 @@
   </div>
 </section>
 
-<!-- Press Footer Section -->
-<footer class="iffi-footer py-5">
-  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+ 
 
-    <!-- Left Section -->
-    <div class="footer-links text-white">
-      <div class="d-flex flex-column flex-md-row gap-md-5 gap-3">
-        <div>
-          <p class="mb-2 footer-p">51<sup>st</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
-          <p class="mb-2 footer-p">53<sup>rd</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
+  <!-- Footer -->
+  <footer class="iffi-footer py-5">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="footer-links">
+        <div class="d-flex flex-column flex-md-row gap-md-5 gap-3">
+          <div>
+            <p>51<sup>st</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
+            <p>53<sup>rd</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
+          </div>
+          <div>
+            <p>52<sup>nd</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
+            <p>54<sup>th</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
+          </div>
         </div>
-        <div>
-          <p class="mb-2 footer-p">52<sup>nd</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
-          <p class="mb-2 footer-p">54<sup>th</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
+      </div>
+      <div class="footer-social text-center text-md-end mt-4 mt-md-0">
+        <h6 class="text-uppercase text-gold fw-semibold mb-3">Follow Us On</h6>
+        <div class="social-icons d-flex justify-content-md-end justify-content-center gap-3">
+          <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
     </div>
+  </footer>
 
-    <!-- Right Section -->
-    <div class="footer-social text-center text-md-end mt-4 mt-md-0">
-      <h6 class="text-uppercase text-gold fw-semibold mb-3">Follow Us On</h6>
-      <div class="social-icons d-flex justify-content-md-end justify-content-center gap-3">
-        <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
-        <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
-      </div>
-    </div>
-
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
