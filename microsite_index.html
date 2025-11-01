@@ -8,17 +8,26 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
+    @font-face {
+        font-family: 'Gotham';
+        src: url('/fonts/gotham/gotham-regular.woff2') format('woff2'),
+            url('/fonts/gotham/gotham-regular.woff') format('woff'),
+            url('/fonts/gotham/gotham-regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
     body, html {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
+      /* font-family: 'Poppins', sans-serif; */
+      font-family: 'Gotham', sans-serif;
       color: #2b0030;
       background: #fdf9ff;
     }
 
     /* Header */
     .site-header {
-      position: fixed;
+      position: relative;
       top: 0;
       left: 0;
       width: 100%;
@@ -29,8 +38,29 @@
       border-bottom: 2px solid rgba(255, 215, 0, 0.2);
       color: #fff;
       box-shadow: 0 2px 8px rgba(126, 0, 123, 0.2);
+      transition: all 0.3s ease-in-out;
     }
-
+    /* When fixed */
+    .site-header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: slideDown 0.3s ease-in-out;
+    }
+    /* Smooth slide-down effect */
+    @keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+    }
+    /* Add top space so content doesn’t jump when header becomes fixed */
+    body.has-fixed-header {
+    padding-top: 100px; /* adjust based on header height */
+    }
     .site-header .nav-link {
       color: #fff;
       font-weight: 500;
@@ -221,6 +251,13 @@
     opacity: 0.9;
     }
 
+    .top-banner img {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        display: block;
+        }
+
     /* Optional: match header logo sizing */
     @media (max-width: 768px) {
     .logo-img-footer {
@@ -228,11 +265,13 @@
     }
     }
 
+    @media (max-width: 1208px) {
+        .site-header .container {
+          flex-direction: column;
+          text-align: center;
+        }
+    }
     @media (max-width: 768px) {
-      .site-header .container {
-        flex-direction: column;
-        text-align: center;
-      }
       .nav {
         justify-content: center !important;
         margin-bottom: 0.5rem;
@@ -253,9 +292,12 @@
   </style>
 </head>
 <body>
-
+<!-- Top Banner Section -->
+  <div class="top-banner">
+    <img src="assets/IFFI PR Banner.png" alt="Press Header Banner" class="img-fluid w-100">
+  </div>
   <!-- Header -->
-  <header class="site-header py-2">
+    <header id="stickyHeader" class="site-header py-3 bg-white shadow-sm">
     <div class="container d-flex justify-content-between align-items-center flex-wrap">
       <nav class="nav justify-content-center">
         <a class="nav-link active" href="#">HOME</a>
@@ -265,7 +307,7 @@
         <a class="nav-link" href="#">CONNECT WITH US</a>
         <a class="nav-link" href="#">IFFI MAP</a>
       </nav>
-      <div class="social-icons d-flex align-items-center">
+      <div class="social-icons d-none d-lg-flex align-items-center">
         <a href="#"><i class="bi bi-twitter-x"></i></a>
         <a href="#"><i class="bi bi-youtube"></i></a>
         <a href="#"><i class="bi bi-facebook"></i></a>
@@ -439,7 +481,19 @@
       </div>
     </div>
   </footer>
-
+<script>
+  window.addEventListener("scroll", function () {
+    const header = document.getElementById("stickyHeader");
+    const bannerHeight = document.querySelector(".top-banner").offsetHeight;
+    if (window.scrollY > bannerHeight - 50) {
+      header.classList.add("fixed");
+      document.body.classList.add("has-fixed-header");
+    } else {
+      header.classList.remove("fixed");
+      document.body.classList.remove("has-fixed-header");
+    }
+  });
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
