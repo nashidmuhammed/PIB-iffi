@@ -206,6 +206,28 @@
       box-shadow: 0 0 10px rgba(255, 216, 107, 0.6);
     }
 
+    /* Footer Styling */
+    .site-footer {
+    background-color: #f9f9f9;
+    }
+
+    .logo-img-footer {
+    height: 50px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .logo-img-footer:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    }
+
+    /* Optional: match header logo sizing */
+    @media (max-width: 768px) {
+    .logo-img-footer {
+        height: 40px;
+    }
+    }
+
     @media (max-width: 768px) {
       .site-header .container {
         flex-direction: column;
@@ -349,7 +371,47 @@
   </div>
 </section>
 
- 
+ <footer class="site-footer py-4 border-top">
+  <div class="container text-center">
+    <h6 class="mb-3 fw-bold text-uppercase text-secondary">Organized & Supported By</h6>
+    <ul class="nav justify-content-center align-items-center flex-wrap mb-3">
+      <li class="nav-item mx-2 my-1">
+        <a href="https://mib.gov.in" target="_blank">
+          <img src="assets/logos/MIB.png" alt="MIB" class="logo-img-footer">
+        </a>
+      </li>
+      <li class="nav-item mx-2 my-1">
+        <a href="https://www.goa.gov.in/" target="_blank">
+          <img src="assets/logos/GovtGoa.png" alt="GoaGov" class="logo-img-footer">
+        </a>
+      </li>
+      <li class="nav-item mx-2 my-1">
+        <a href="https://www.iffigoa.org" target="_blank">
+          <img src="assets/logos/IFFI56.png" alt="IFFI" class="logo-img-footer">
+        </a>
+      </li>
+      <li class="nav-item mx-2 my-1">
+        <a href="#" target="_blank">
+          <img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img-footer">
+        </a>
+      </li>
+      <li class="nav-item mx-2 my-1">
+        <a href="https://www.nfdcindia.com/" target="_blank">
+          <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img-footer">
+        </a>
+      </li>
+      <li class="nav-item mx-2 my-1">
+        <a href="https://esg.co.in/" target="_blank">
+          <img src="assets/logos/esg.png" alt="ESG" class="logo-img-footer">
+        </a>
+      </li>
+    </ul>
+
+    <p class="text-muted small mb-0">
+      &copy; 2025 International Film Festival of India (IFFI). All Rights Reserved.
+    </p>
+  </div>
+</footer>
 
   <!-- Footer -->
   <footer class="iffi-footer py-5">
