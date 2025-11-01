@@ -34,7 +34,7 @@
       z-index: 1045;
       display: flex;
       justify-content: center;
-      background: linear-gradient(90deg, #7e007b, #a74aa5);
+      background: linear-gradient(90deg, #a74aa5, #7e007b);
       border-bottom: 2px solid rgba(255, 215, 0, 0.2);
       color: #fff;
       box-shadow: 0 2px 8px rgba(126, 0, 123, 0.2);
@@ -195,7 +195,9 @@
 
     /* Footer */
     .iffi-footer {
-      background: linear-gradient(90deg, #7e007b, #a74aa5);
+      /* background: linear-gradient(90deg, #7e007b, #a74aa5); */
+      background: linear-gradient(90deg, #a74aa5, #7e007b);
+
       color: #fff;
       border-top: 2px solid rgba(255, 215, 0, 0.3);
     }
@@ -289,6 +291,17 @@
         margin-bottom: 1.5rem;
       }
     }
+
+    .iffi-footer .logo-img-footer {
+        height: 55px;
+        filter: brightness(0.95);
+        transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .iffi-footer .logo-img-footer:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+        }
   </style>
 </head>
 <body>
@@ -413,7 +426,7 @@
   </div>
 </section>
 
- <footer class="site-footer py-4 border-top">
+ <!-- <footer class="site-footer py-4 border-top">
   <div class="container text-center">
     <h6 class="mb-3 fw-bold text-uppercase text-secondary">Organized & Supported By</h6>
     <ul class="nav justify-content-center align-items-center flex-wrap mb-3">
@@ -453,24 +466,55 @@
       &copy; 2025 International Film Festival of India (IFFI). All Rights Reserved.
     </p>
   </div>
-</footer>
+</footer> -->
 
   <!-- Footer -->
-  <footer class="iffi-footer py-5">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap">
-      <div class="footer-links">
-        <div class="d-flex flex-column flex-md-row gap-md-5 gap-3">
-          <div>
-            <p>51<sup>st</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
-            <p>53<sup>rd</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
-          </div>
-          <div>
-            <p>52<sup>nd</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
-            <p>54<sup>th</sup> INTERNATIONAL FILM FESTIVAL OF INDIA</p>
-          </div>
-        </div>
+  <!-- Footer -->
+<footer class="iffi-footer py-5">
+  <div class="container text-center text-md-start">
+    <div class="row align-items-center gy-4">
+
+      <!-- Organized & Supported By -->
+      <div class="col-12 col-md-8">
+        <h6 class="mb-4 fw-bold text-uppercase text-gold text-center text-md-start">
+          Organized & Supported By
+        </h6>
+        <ul class="nav justify-content-center justify-content-md-start align-items-center flex-wrap">
+          <li class="nav-item mx-3 my-2">
+            <a href="https://mib.gov.in" target="_blank">
+              <img src="assets/logos/MIB.png" alt="MIB" class="logo-img-footer" style="height:55px;">
+            </a>
+          </li>
+          <li class="nav-item mx-3 my-2">
+            <a href="https://www.goa.gov.in/" target="_blank">
+              <img src="assets/logos/GovtGoa.png" alt="GoaGov" class="logo-img-footer" style="height:55px;">
+            </a>
+          </li>
+          <li class="nav-item mx-3 my-2">
+            <a href="https://www.iffigoa.org" target="_blank">
+              <img src="assets/logos/IFFI56.png" alt="IFFI" class="logo-img-footer" style="height:55px;">
+            </a>
+          </li>
+          <li class="nav-item mx-3 my-2">
+            <a href="#" target="_blank">
+              <img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img-footer" style="height:55px;">
+            </a>
+          </li>
+          <li class="nav-item mx-3 my-2">
+            <a href="https://www.nfdcindia.com/" target="_blank">
+              <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img-footer" style="height:55px;">
+            </a>
+          </li>
+          <li class="nav-item mx-3 my-2">
+            <a href="https://esg.co.in/" target="_blank">
+              <img src="assets/logos/esg.png" alt="ESG" class="logo-img-footer" style="height:55px;">
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="footer-social text-center text-md-end mt-4 mt-md-0">
+
+      <!-- Follow Us -->
+      <div class="col-12 col-md-4 text-center text-md-end">
         <h6 class="text-uppercase text-gold fw-semibold mb-3">Follow Us On</h6>
         <div class="social-icons d-flex justify-content-md-end justify-content-center gap-3">
           <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
@@ -479,8 +523,18 @@
           <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
+
     </div>
-  </footer>
+
+    <hr class="border-light opacity-25 my-4">
+
+    <div class="text-center">
+      <p class="small mb-0 text-light">
+        &copy; 2025 International Film Festival of India (IFFI). All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
 <script>
   window.addEventListener("scroll", function () {
     const header = document.getElementById("stickyHeader");
