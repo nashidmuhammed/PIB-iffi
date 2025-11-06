@@ -313,6 +313,59 @@
         transform: scale(1.05);
         filter: brightness(1.1);
         }
+
+
+
+      /* Festival Map Section */
+      .festival-map-section {
+        background: transparent; /* removed blue bg */
+        color: #222; /* dark text color for readability */
+      }
+
+      .festival-map-section h2 {
+        color: #7e007b; /* gold accent (matches your theme) */
+        letter-spacing: 1px;
+        margin-bottom: 60px;
+      }
+
+      .festival-map-section img {
+        width: 120%;
+        max-width: none; 
+        transition: transform 0.3s ease;
+        transform: scale(1.15);
+        transition: transform 0.4s ease;
+        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3));
+      }
+
+      .festival-map-section img:hover {
+        transform: scale(1.2);
+      }
+
+      .festival-locations {
+        counter-reset: location;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .festival-locations li {
+        position: relative;
+        margin-bottom: 0.6rem;
+        padding-left: 2rem;
+        font-weight: 500;
+        color: #333;
+      }
+
+      .festival-locations li::before {
+        counter-increment: location;
+        content: counter(location) ".";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #7e007b; /* gold number */
+        font-weight: bold;
+      }
+
+
   </style>
 </head>
 <body>
@@ -386,6 +439,32 @@
     </div>
   </section>
 
+  <!-- Festival Map Section -->
+<section class="festival-map-section py-5">
+  <div class="container text-center">
+    <h2 class="mb-4  fw-bold text-gold">Festival Map</h2>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-9 mb-4 mb-lg-0">
+        <img src="assets/map.png" alt="Festival Map" class="img-fluid rounded-3">
+      </div>
+      <div class="col-lg-3 text-start">
+        <ol class="festival-locations fs-5">
+          <li>Miramar Beach</li>
+          <li>Kala Academy</li>
+          <li>Samrat Ashok Theatre</li>
+          <li>INOX Panjim</li>
+          <li>Maquinez Palace Theatre</li>
+          <li>Vagator</li>
+          <li>INOX Porvorim</li>
+          <li>Magic Moviez</li>
+          <li>INOX G Wing</li>
+          <li>Ravindra Bhavan</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- Recent Stories Carousel -->
 <section class="stories-section">
   <div class="container">
@@ -436,6 +515,11 @@
     </div>
   </div>
 </section>
+
+
+
+
+
 
  <!-- <footer class="site-footer py-4 border-top">
   <div class="container text-center">
