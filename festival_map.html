@@ -408,8 +408,65 @@
   height: 200px;
   object-fit: cover;
 }
+
+.coming-soon-section img {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
   </style>
-  
+  <style>
+.festival-map-section {
+  /* background: radial-gradient(circle at top left, #1b1b1b, #000); */
+}
+
+.map-iframe-wrapper {
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.map-image-container {
+  min-height: 400px;
+}
+
+.map-location-list {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.map-location-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.map-location-list .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .map-location-list {
+    position: static;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 15px;
+  }
+}
+</style>
 
 </head>
 <body>
@@ -422,11 +479,11 @@
     <div class="container d-flex justify-content-between align-items-center flex-wrap">
       <nav class="nav justify-content-center">
         <a class="nav-link " href="microsite_index.html">HOME</a>
-        <a class="nav-link active" href="iffi_stories.html">IFFI STORIES</a>
+        <a class="nav-link" href="iffi_stories.html">IFFI STORIES</a>
         <a class="nav-link" href="media_interactions.html">MEDIA INTERACTIONS</a>
-        <a class="nav-link" href="iffi_through.html">IFFI THROUGH OUR LENS</a>
+        <a class="nav-link " href="iffi_through.html">IFFI THROUGH OUR LENS</a>
         <!-- <a class="nav-link" href="#">CONNECT WITH US</a> -->
-        <a class="nav-link" href="festival_map.html">IFFI MAP</a>
+        <a class="nav-link active" href="festival_map.html">IFFI MAP</a>
       </nav>
       <div class="social-icons d-none d-lg-flex align-items-center">
         <a href="https://x.com/PIB_Panaji"><i class="bi bi-twitter-x"></i></a>
@@ -441,136 +498,50 @@
     <!-- Recent Stories Section -->
 
 
-<section class="stories-section py-5">
+<section class="festival-map-section py-5 text-white mt-5">
+  <h2 class="mb-4  fw-bold text-gold text-center ">Festival Map</h2>
   <div class="container">
-    <div class="text-center">
-      <h2 class="text-center fw-bold mb-5 text-uppercase">IFFI Stories</h2>
+    <div class="row g-4 align-items-stretch">
+      <!-- LEFT SIDE: Google Map -->
+      <div class="col-lg-6 col-12">
+        <div class="map-iframe-wrapper h-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.7271264345663!2d73.82068579999999!3d15.499103100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc08b7ae058f5%3A0x660de0882f00de08!2sOld%20GMC%20palace!5e0!3m2!1sen!2sin!4v1762485189793!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: Map Image + List -->
+      <div class="col-lg-6 col-12 position-relative">
+        <div class="map-image-container position-relative">
+          <img
+            src="assets/map.png"
+            class="img-fluid w-100 rounded shadow"
+            alt="Festival Map"
+          />
+          <!-- ABSOLUTE LIST -->
+           <!-- <ol class="festival-locations fs-5"></ol> -->
+          <ul class="map-location-list list-unstyled m-0 festival-locations">
+          <li>Miramar Beach</li>
+          <li>Kala Academy</li>
+          <li>Samrat Ashok Theatre</li>
+          <li>INOX Panjim</li>
+          <li>Maquinez Palace Theatre</li>
+          <li>Vagator</li>
+          <li>INOX Porvorim</li>
+          <li>Magic Moviez</li>
+          <li>INOX G Wing</li>
+          <li>Ravindra Bhavan</li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <div class="row g-4">
-
-      <!-- Story 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="assets/images/story1.jpg" onerror="this.src='assets/default-story.jpeg'" class="card-img-top" alt="IFFI 2025 Media Accreditation">
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">
-              <i class="bi bi-calendar-event"></i> 04-November-2025
-            </small>
-            <h5 class="card-title">IFFI 2025 Media Accreditation: Deadline Extended to 10th November</h5>
-            <p class="card-text">
-              Details the extension of media accreditation deadline for the 56th International Film Festival of India 2025.
-            </p>
-            <div class="d-flex justify-content-start align-items-center gap-3 mt-3">
-              <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186678" class="btn btn-sm btn-outline-warning">Read More</a>
-              <a href="https://twitter.com/intent/tweet?url=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-twitter-x"></i></a>
-              <a href="https://facebook.com/sharer.php?u=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-facebook"></i></a>
-              <a href="https://api.whatsapp.com/send?text=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Story 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="assets/images/story2.jpg" onerror="this.src='assets/default-story.jpeg'" class="card-img-top" alt="Press Release: Press Information Bureau">
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">
-              <i class="bi bi-calendar-event"></i> 31-December-2024
-            </small>
-            <h5 class="card-title">Press Release: Press Information Bureau</h5>
-            <p class="card-text">
-              Overview of the 56th edition of IFFI scheduled for 20–28 Nov 2025 in Panaji, Goa.
-            </p>
-            <div class="d-flex justify-content-start align-items-center gap-3 mt-3">
-              <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186864" class="btn btn-sm btn-outline-warning">Read More</a>
-              <a href="https://twitter.com/intent/tweet?url=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-twitter-x"></i></a>
-              <a href="https://facebook.com/sharer.php?u=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-facebook"></i></a>
-              <a href="https://api.whatsapp.com/send?text=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Story 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="assets/images/story3.jpg" onerror="this.src='assets/default-story.jpeg'" class="card-img-top" alt="Media Accreditation opens for 56th IFFI">
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">
-              <i class="bi bi-calendar-event"></i> 13-October-2025
-            </small>
-            <h5 class="card-title">Media Accreditation opens for 56th International Film Festival of India</h5>
-            <p class="card-text">
-              Announcement of accreditation portal opening, Film Appreciation Course details, and accreditation process.
-            </p>
-            <div class="d-flex justify-content-start align-items-center gap-3 mt-3">
-              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2179039" class="btn btn-sm btn-outline-warning">Read More</a>
-              <a href="https://twitter.com/intent/tweet?url=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-twitter-x"></i></a>
-              <a href="https://facebook.com/sharer.php?u=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-facebook"></i></a>
-              <a href="https://api.whatsapp.com/send?text=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Story 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="assets/images/story4.jpg" onerror="this.src='assets/default-story.jpeg'" class="card-img-top" alt="Media Accreditation for 56th IFFI Open Till 5th November">
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">
-              <i class="bi bi-calendar-event"></i> 28-October-2025
-            </small>
-            <h5 class="card-title">Media Accreditation for 56th IFFI Open Till 5th November</h5>
-            <p class="card-text">
-              Reminder about the accreditation window with festival highlights and support details.
-            </p>
-            <div class="d-flex justify-content-start align-items-center gap-3 mt-3">
-              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2183748" class="btn btn-sm btn-outline-warning">Read More</a>
-              <a href="https://twitter.com/intent/tweet?url=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-twitter-x"></i></a>
-              <a href="https://facebook.com/sharer.php?u=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-facebook"></i></a>
-              <a href="https://api.whatsapp.com/send?text=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Story 5 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card border-0 shadow-sm h-100">
-          <img src="assets/images/story5.jpg" onerror="this.src='assets/default-story.jpeg'" class="card-img-top" alt="First Meeting of the 56th IFFI Steering Committee">
-          <div class="card-body">
-            <small class="text-muted d-block mb-2">
-              <i class="bi bi-calendar-event"></i> 17-July-2025
-            </small>
-            <h5 class="card-title">First Meeting of the 56th IFFI Steering Committee Held in Mumbai</h5>
-            <p class="card-text">
-              Details of the strategic planning and committee members for IFFI 2025.
-            </p>
-            <div class="d-flex justify-content-start align-items-center gap-3 mt-3">
-              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2145796" class="btn btn-sm btn-outline-warning">Read More</a>
-              <a href="https://twitter.com/intent/tweet?url=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-twitter-x"></i></a>
-              <a href="https://facebook.com/sharer.php?u=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-facebook"></i></a>
-              <a href="https://api.whatsapp.com/send?text=http://pib.gov.in/photshare/172011_3_1_photoshare.aspx" target="_blank" class="text-dark"><i class="bi bi-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Pagination -->
-    <nav class="mt-5">
-      <ul class="pagination justify-content-center">
-        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
   </div>
 </section>
  
