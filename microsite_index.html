@@ -416,6 +416,36 @@
   }
 }
 </style>
+<style>
+/* Restrict carousel control click area to the icon only */
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto !important;       /* shrink to icon size */
+  height: auto !important;      /* remove full-height overlay */
+  top: 50%;                     /* vertically center */
+  transform: translateY(-50%);  /* adjust centering */
+  background: none !important;  /* remove background hit area */
+  opacity: 1;                   /* ensure visible */
+  z-index: 5;                   /* stay above images but not block cards */
+}
+
+/* Adjust icon button spacing */
+.carousel-control-prev {
+  left: 15px;                   /* small padding from edge */
+}
+
+.carousel-control-next {
+  right: 15px;
+}
+
+/* Style the icons (you already have rounded bg-dark ones, so this is optional) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000 !important;
+  border-radius: 50%;
+  padding: 10px;
+}
+</style>
 </head>
 <body>
 <!-- Top Banner Section -->
@@ -503,41 +533,47 @@
           <div class="row g-4">
             <!-- Story 1 -->
             <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="assets/images/story1.jpg" onerror="this.src='assets/default-story.jpeg';" alt="IFFI 2025 Media Accreditation" class="card-img-top">
-                <div class="card-body">
-                  <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 04-November-2025</small>
-                  <h5 class="card-title">IFFI 2025 Media Accreditation: Deadline Extended to 10th November</h5>
-                  <p class="card-text small text-muted">Details extension of media accreditation deadline for the 56th International Film Festival of India 2025.</p>
-                  <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186678" class="btn btn-outline-warning btn-sm">Read More</a>
+              <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186678" class="text-decoration-none text-dark">
+                <div class="card h-100 border-0 shadow-sm story-card">
+                  <img src="assets/images/story1.jpg" onerror="this.src='assets/default-story.jpeg';" alt="IFFI 2025 Media Accreditation" class="card-img-top">
+                  <div class="card-body">
+                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 04-November-2025</small>
+                    <h5 class="card-title">IFFI 2025 Media Accreditation: Deadline Extended to 10th November</h5>
+                    <p class="card-text small text-muted">Details extension of media accreditation deadline for the 56th International Film Festival of India 2025.</p>
+                    <span class="btn btn-outline-warning btn-sm">Read More</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Story 2 -->
             <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="assets/images/story2.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Press Release: Press Information Bureau" class="card-img-top">
-                <div class="card-body">
-                  <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 31-December-2024</small>
-                  <h5 class="card-title">Press Release: Press Information Bureau</h5>
-                  <p class="card-text small text-muted">Overview of the 56th edition of IFFI scheduled for 20–28 Nov 2025 in Panaji, Goa.</p>
-                  <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186864" class="btn btn-outline-warning btn-sm">Read More</a>
+              <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186864" class="text-decoration-none text-dark">
+                <div class="card h-100 border-0 shadow-sm story-card">
+                  <img src="assets/images/story2.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Press Release: Press Information Bureau" class="card-img-top">
+                  <div class="card-body">
+                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 31-December-2024</small>
+                    <h5 class="card-title">Press Release: Press Information Bureau</h5>
+                    <p class="card-text small text-muted">Overview of the 56th edition of IFFI scheduled for 20–28 Nov 2025 in Panaji, Goa.</p>
+                    <span class="btn btn-outline-warning btn-sm">Read More</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Story 3 -->
             <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="assets/images/story3.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Media Accreditation opens for 56th IFFI" class="card-img-top">
-                <div class="card-body">
-                  <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 13-October-2025</small>
-                  <h5 class="card-title">Media Accreditation opens for 56th International Film Festival of India</h5>
-                  <p class="card-text small text-muted">Announcement of accreditation portal opening, Film Appreciation Course details, and accreditation process.</p>
-                  <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2179039" class="btn btn-outline-warning btn-sm">Read More</a>
+              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2179039" class="text-decoration-none text-dark">
+                <div class="card h-100 border-0 shadow-sm story-card">
+                  <img src="assets/images/story3.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Media Accreditation opens for 56th IFFI" class="card-img-top">
+                  <div class="card-body">
+                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 13-October-2025</small>
+                    <h5 class="card-title">Media Accreditation opens for 56th International Film Festival of India</h5>
+                    <p class="card-text small text-muted">Announcement of accreditation portal opening, Film Appreciation Course details, and accreditation process.</p>
+                    <span class="btn btn-outline-warning btn-sm">Read More</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -545,30 +581,35 @@
         <!-- Slide 2 -->
         <div class="carousel-item">
           <div class="row g-4">
+
             <!-- Story 4 -->
             <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="assets/images/story4.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Media Accreditation for 56th IFFI Open Till 5th November" class="card-img-top">
-                <div class="card-body">
-                  <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 28-October-2025</small>
-                  <h5 class="card-title">Media Accreditation for 56th IFFI Open Till 5th November</h5>
-                  <p class="card-text small text-muted">Reminder about the accreditation window with festival highlights and support details.</p>
-                  <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2183748" class="btn btn-outline-warning btn-sm">Read More</a>
+              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2183748" class="text-decoration-none text-dark">
+                <div class="card h-100 border-0 shadow-sm story-card">
+                  <img src="assets/images/story4.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Media Accreditation for 56th IFFI Open Till 5th November" class="card-img-top">
+                  <div class="card-body">
+                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 28-October-2025</small>
+                    <h5 class="card-title">Media Accreditation for 56th IFFI Open Till 5th November</h5>
+                    <p class="card-text small text-muted">Reminder about the accreditation window with festival highlights and support details.</p>
+                    <span class="btn btn-outline-warning btn-sm">Read More</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Story 5 -->
             <div class="col-md-4">
-              <div class="card h-100 border-0 shadow-sm">
-                <img src="assets/images/story5.jpg" onerror="this.src='assets/default-story.jpeg';" alt="First Meeting of the 56th IFFI Steering Committee" class="card-img-top">
-                <div class="card-body">
-                  <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 17-July-2025</small>
-                  <h5 class="card-title">First Meeting of the 56th IFFI Steering Committee Held in Mumbai</h5>
-                  <p class="card-text small text-muted">Details of the strategic planning and committee members for IFFI 2025.</p>
-                  <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2145796" class="btn btn-outline-warning btn-sm">Read More</a>
+              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2145796" class="text-decoration-none text-dark">
+                <div class="card h-100 border-0 shadow-sm story-card">
+                  <img src="assets/images/story5.jpg" onerror="this.src='assets/default-story.jpeg';" alt="First Meeting of the 56th IFFI Steering Committee" class="card-img-top">
+                  <div class="card-body">
+                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 17-July-2025</small>
+                    <h5 class="card-title">First Meeting of the 56th IFFI Steering Committee Held in Mumbai</h5>
+                    <p class="card-text small text-muted">Details of the strategic planning and committee members for IFFI 2025.</p>
+                    <span class="btn btn-outline-warning btn-sm">Read More</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Empty filler column for layout balance -->
