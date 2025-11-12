@@ -248,7 +248,7 @@
   overflow: hidden;
 }
 
-#countdown {
+/* #countdown {
   font-size: 2rem;
   font-weight: 800;
   color: #fed602;
@@ -257,7 +257,7 @@
   text-shadow: 0 2px 8px rgba(0,0,0,0.4);
   position: relative;
   z-index: 20;
-}
+} */
 
 /* Subtle gradient pulse animation */
 @keyframes gradientPulse {
@@ -318,6 +318,10 @@
       }
       #countdown { font-size: 1.2rem; }
     }
+
+    .text-right{
+      text-align: right !important;
+    }
   </style>
 </head>
 <body>
@@ -339,20 +343,29 @@
 </header> -->
 
 <!-- Banner Below -->
-<div class="text-center mb-4">
+<div class="text-center mb-">
   <img src="assets/IFFI PR Banner.png" alt="Press Footer Banner" class="img-fluid ">
 </div>
 <!-- Countdown Section -->
-<div class="countdown-container text-center ">
+<!-- <div class="countdown-container text-center ">
   <div id="countdown">X Days to Go</div>
-</div>
+</div> -->
+<!-- Place this right AFTER your header -->
+<section class="film-roll-section text-right">
+  <div class=" position-relative">
+    <div class="film-roll-badge ">
+      <img src="assets/IFFI Reel Strip 1.png" alt="Film Roll" class="film-roll-img" />
+      <div class="film-roll-text" id="countdown">10 Days to Go</div>
+    </div>
+  </div>
+</section>
 <!-- <div class="text-center mb-4">
     <div id="countdown" class="mt-3">8 Days to go</div>
     <img src="assets/IFFI PR Banner.png" alt="Press Footer Banner" class="img-fluid rounded">
 </div> -->
 
 <!-- Press Section -->
-<section class="press-section">
+<section class="press-section mt-">
   <div class="press-wrapper">
     <!-- <div class="press-header">
         Goa is all set for a grand, star-studded opening ceremony of 55th IFFI tomorrow
@@ -507,7 +520,7 @@ Accessible IFFI's Accessible Opening Ceremony will feature live Indian sign lang
 
 </body>
 
-<script>
+<!-- <script>
   // Define start and end dates
   const festivalStart = new Date("2025-11-20T00:00:00").getTime();
   const festivalEnd = new Date("2025-11-28T23:59:59").getTime();
@@ -534,8 +547,95 @@ Accessible IFFI's Accessible Opening Ceremony will feature live Indian sign lang
       clearInterval(interval);
     }
   }, 1000);
+</script> -->
+
+<script>
+// Festival date range
+const countdownEl = document.getElementById("countdown");
+const startDate = new Date("2025-11-20T00:00:00").getTime();
+const endDate = new Date("2025-11-28T23:59:59").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+
+  if (now < startDate) {
+    const days = Math.ceil((startDate - now) / (1000 * 60 * 60 * 24));
+    countdownEl.textContent = `${days} Day${days !== 1 ? 's' : ''} to Go`;
+  } else if (now >= startDate && now <= endDate) {
+    countdownEl.textContent = "🎬 Festival Ongoing";
+  } else {
+    countdownEl.textContent = "✨ Festival Ended";
+  }
+}, 1000 * 60 * 60);
 </script>
 
+<style>
+/* Section styling */
+.film-roll-section {
+  background: transparent;
+  padding: 10px 0;
+  display: flex;
+  justify-content: right;
+}
 
+/* Film roll container */
+.film-roll-badge {
+  position: relative;
+  width: 260px;
+  max-width: 80%;
+  height: auto;
+  display: inline-block;
+  animation: floatUpDown 6s ease-in-out infinite;
+  margin-right: 20px;
+
+}
+
+/* Film roll image */
+.film-roll-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+}
+
+/* Countdown text overlay */
+.film-roll-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #6d2c8e;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 15px #000;
+  white-space: nowrap;
+}
+
+/* Animation for soft floating effect */
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  .film-roll-badge {
+    width: 200px;
+  }
+  .film-roll-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .film-roll-badge {
+    width: 160px;
+  }
+  .film-roll-text {
+    font-size: 0.9rem;
+  }
+}
+</style>
 
 </html>
