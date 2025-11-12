@@ -320,7 +320,140 @@
       }
       #countdown { font-size: 1.2rem; }
     }
+
+    .highlight {
+      width: 460px;
+    }
   </style>
+
+<style>
+/* === Film Roll Badge Styling === */
+.film-roll-badge {
+  position: absolute;
+  top: 30%;
+  right: 20px;
+  width: 230px;
+  height: 70px;
+  background: repeating-linear-gradient(
+    to right,
+    #9a2375 0px,
+    #9a2375 18px,
+    #6e2b8b 18px,
+    #6e2b8b 36px
+  );
+  border-top: 8px solid #9a2375;
+  border-bottom: 8px solid #9a2375;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  animation: moveFilm 8s linear infinite;
+  z-index: 10;
+}
+
+/* film sprocket holes */
+.film-roll-badge::before,
+.film-roll-badge::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient(
+    to right,
+    #9a2375 0px,
+    #9a2375 10px,
+    #fff 10px,
+    #fff 20px
+  );
+  left: 0;
+  z-index: 2;
+}
+.film-roll-badge::before {
+  top: -4px;
+}
+.film-roll-badge::after {
+  bottom: -4px;
+}
+
+.film-roll-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: flicker 2s infinite ease-in-out;
+}
+
+.countdown-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 10px #000;
+  white-space: nowrap;
+}
+
+/* === Animations === */
+@keyframes moveFilm {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 120px 0;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+  25% { opacity: 0.95; }
+  75% { opacity: 0.85; }
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 1500px) {
+  .film-roll-badge {
+    top: 25%;
+    right: 18px;
+    /* width: 220px; */
+    height: 65px;
+    font-size: 0.85rem;
+  }
+  .press-section {
+    margin-top: 35px;
+  }
+}
+@media (max-width: 992px) {
+  .film-roll-badge {
+    top: 15%;
+    right: 10px;
+    /* width: 200px; */
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .film-roll-badge {
+    top: 10%;
+    right: 10px;
+    /* width: 180px; */
+    height: 55px;
+  }
+  .countdown-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .film-roll-badge {
+    top: 10%;
+    right: 5px;
+    /* width: 160px; */
+    height: 50px;
+  }
+  .countdown-text {
+    font-size: 0.85rem;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -515,7 +648,7 @@ Accessible IFFI's Accessible Opening Ceremony will feature live Indian sign lang
 
 </body>
 
-<!-- <script>
+<script>
   // Define start and end dates
   const festivalStart = new Date("2025-11-20T00:00:00").getTime();
   const festivalEnd = new Date("2025-11-28T23:59:59").getTime();
@@ -528,30 +661,39 @@ Accessible IFFI's Accessible Opening Ceremony will feature live Indian sign lang
       // Before festival — show days to go
       const daysLeft = Math.ceil((festivalStart - now) / (1000 * 60 * 60 * 24));
       countdownElement.innerHTML = `<span class="countdown-text">${daysLeft}</span> Day${daysLeft !== 1 ? 's' : ''} to go`;
-      countdownElement.className = "countdown normal";
+      // countdownElement.className = "countdown normal";
     } 
     else if (now >= festivalStart && now <= festivalEnd) {
       // During festival — show "Live!"
       countdownElement.innerHTML = `🎉 <span class="highlight">The Festival is Live!</span> <span class="date-range">(Nov 20 – 28)</span>`;
-      countdownElement.className = "countdown active";
+      // countdownElement.className = "countdown active";
+      const elements = document.querySelectorAll('.film-roll-badge');
+      const newWidth = '450px';
+      
+      elements.forEach(element => {
+        element.style.width = newWidth;
+      });
     } 
     else {
       // After festival — show ended
       countdownElement.innerHTML = `✨ <span class="ended">The Festival Has Ended</span>`;
-      countdownElement.className = "countdown ended-state";
+      const elements = document.querySelectorAll('.film-roll-badge');
+      const newWidth = '450px';
+      // countdownElement.className = "countdown ended-state";
       clearInterval(interval);
     }
   }, 1000);
-</script> -->
+</script>
 
-<script>
+<!-- <script>
 const countdownEl = document.getElementById("countdown");
-const startDate = new Date("2025-11-20T00:00:00").getTime();
+const startDate = new Date("2025-11-11T00:00:00").getTime();
 const endDate = new Date("2025-11-28T23:59:59").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
-
+  console.log("now===>",now);
+  
   if (now < startDate) {
     const days = Math.ceil((startDate - now) / (1000 * 60 * 60 * 24));
     countdownEl.textContent = `${days} Day${days !== 1 ? 's' : ''} to Go`;
@@ -561,135 +703,7 @@ setInterval(() => {
     countdownEl.textContent = "✨ Festival Ended";
   }
 }, 1000 * 60 * 60);
-</script>
+</script> -->
 
-<style>
-/* === Film Roll Badge Styling === */
-.film-roll-badge {
-  position: absolute;
-  top: 30%;
-  right: 20px;
-  width: 230px;
-  height: 70px;
-  background: repeating-linear-gradient(
-    to right,
-    #9a2375 0px,
-    #9a2375 18px,
-    #6e2b8b 18px,
-    #6e2b8b 36px
-  );
-  border-top: 8px solid #9a2375;
-  border-bottom: 8px solid #9a2375;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  animation: moveFilm 8s linear infinite;
-  z-index: 10;
-}
-
-/* film sprocket holes */
-.film-roll-badge::before,
-.film-roll-badge::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 10px;
-  background: repeating-linear-gradient(
-    to right,
-    #9a2375 0px,
-    #9a2375 10px,
-    #fff 10px,
-    #fff 20px
-  );
-  left: 0;
-  z-index: 2;
-}
-.film-roll-badge::before {
-  top: -4px;
-}
-.film-roll-badge::after {
-  bottom: -4px;
-}
-
-.film-roll-inner {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: flicker 2s infinite ease-in-out;
-}
-
-.countdown-text {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 10px #000;
-  white-space: nowrap;
-}
-
-/* === Animations === */
-@keyframes moveFilm {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 120px 0;
-  }
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.9; }
-  25% { opacity: 0.95; }
-  75% { opacity: 0.85; }
-}
-
-/* === Responsive Adjustments === */
-@media (max-width: 1500px) {
-  .film-roll-badge {
-    top: 25%;
-    right: 18px;
-    width: 220px;
-    height: 65px;
-    font-size: 0.85rem;
-  }
-  .press-section {
-    margin-top: 35px;
-  }
-}
-@media (max-width: 992px) {
-  .film-roll-badge {
-    top: 15%;
-    right: 10px;
-    width: 200px;
-    height: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .film-roll-badge {
-    top: 10%;
-    right: 10px;
-    width: 180px;
-    height: 55px;
-  }
-  .countdown-text {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .film-roll-badge {
-    top: 10%;
-    right: 5px;
-    width: 160px;
-    height: 50px;
-  }
-  .countdown-text {
-    font-size: 0.85rem;
-  }
-}
-</style>
 
 </html>
