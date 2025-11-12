@@ -25,6 +25,8 @@
       padding-top: 18px;
       padding-bottom: 100px;
       position: relative;
+    margin-top: 45px;
+
     }
 
     .press-section::before {
@@ -248,16 +250,16 @@
   overflow: hidden;
 }
 
-/* #countdown {
-  font-size: 2rem;
+#countdown {
+  /* font-size: 2rem;
   font-weight: 800;
   color: #fed602;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.4);
   position: relative;
-  z-index: 20;
-} */
+  z-index: 20; */
+}
 
 /* Subtle gradient pulse animation */
 @keyframes gradientPulse {
@@ -318,10 +320,6 @@
       }
       #countdown { font-size: 1.2rem; }
     }
-
-    .text-right{
-      text-align: right !important;
-    }
   </style>
 </head>
 <body>
@@ -343,29 +341,26 @@
 </header> -->
 
 <!-- Banner Below -->
-<div class="text-center mb-">
+<div class="text-center mb-4">
   <img src="assets/IFFI PR Banner.png" alt="Press Footer Banner" class="img-fluid ">
 </div>
 <!-- Countdown Section -->
 <!-- <div class="countdown-container text-center ">
   <div id="countdown">X Days to Go</div>
 </div> -->
-<!-- Place this right AFTER your header -->
-<section class="film-roll-section text-right">
-  <div class=" position-relative">
-    <div class="film-roll-badge ">
-      <img src="assets/IFFI Reel Strip 1.png" alt="Film Roll" class="film-roll-img" />
-      <div class="film-roll-text" id="countdown">10 Days to Go</div>
-    </div>
+<!-- Film Roll Countdown Badge -->
+<div class="film-roll-badge">
+  <div class="film-roll-inner">
+    <div id="countdown" class="countdown-text">10 Days to Go</div>
   </div>
-</section>
+</div>
 <!-- <div class="text-center mb-4">
     <div id="countdown" class="mt-3">8 Days to go</div>
     <img src="assets/IFFI PR Banner.png" alt="Press Footer Banner" class="img-fluid rounded">
 </div> -->
 
 <!-- Press Section -->
-<section class="press-section mt-">
+<section class="press-section">
   <div class="press-wrapper">
     <!-- <div class="press-header">
         Goa is all set for a grand, star-studded opening ceremony of 55th IFFI tomorrow
@@ -550,7 +545,6 @@ Accessible IFFI's Accessible Opening Ceremony will feature live Indian sign lang
 </script> -->
 
 <script>
-// Festival date range
 const countdownEl = document.getElementById("countdown");
 const startDate = new Date("2025-11-20T00:00:00").getTime();
 const endDate = new Date("2025-11-28T23:59:59").getTime();
@@ -570,70 +564,130 @@ setInterval(() => {
 </script>
 
 <style>
-/* Section styling */
-.film-roll-section {
-  background: transparent;
-  padding: 10px 0;
-  display: flex;
-  justify-content: right;
-}
-
-/* Film roll container */
+/* === Film Roll Badge Styling === */
 .film-roll-badge {
-  position: relative;
-  width: 260px;
-  max-width: 80%;
-  height: auto;
-  display: inline-block;
-  animation: floatUpDown 6s ease-in-out infinite;
-  margin-right: 20px;
-
-}
-
-/* Film roll image */
-.film-roll-img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
-}
-
-/* Countdown text overlay */
-.film-roll-text {
   position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #6d2c8e;
-  font-family: 'Poppins', sans-serif;
+  top: 30%;
+  right: 20px;
+  width: 230px;
+  height: 70px;
+  background: repeating-linear-gradient(
+    to right,
+    #9a2375 0px,
+    #9a2375 18px,
+    #6e2b8b 18px,
+    #6e2b8b 36px
+  );
+  border-top: 8px solid #9a2375;
+  border-bottom: 8px solid #9a2375;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  animation: moveFilm 8s linear infinite;
+  z-index: 10;
+}
+
+/* film sprocket holes */
+.film-roll-badge::before,
+.film-roll-badge::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient(
+    to right,
+    #9a2375 0px,
+    #9a2375 10px,
+    #fff 10px,
+    #fff 20px
+  );
+  left: 0;
+  z-index: 2;
+}
+.film-roll-badge::before {
+  top: -4px;
+}
+.film-roll-badge::after {
+  bottom: -4px;
+}
+
+.film-roll-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: flicker 2s infinite ease-in-out;
+}
+
+.countdown-text {
+  font-size: 1.3rem;
   font-weight: 700;
-  font-size: 1.9rem;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8), 0 0 15px #000;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 10px #000;
   white-space: nowrap;
 }
 
-/* Animation for soft floating effect */
-@keyframes floatUpDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+/* === Animations === */
+@keyframes moveFilm {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 120px 0;
+  }
 }
 
-/* ✅ Responsive adjustments */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+  25% { opacity: 0.95; }
+  75% { opacity: 0.85; }
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 1500px) {
+  .film-roll-badge {
+    top: 25%;
+    right: 18px;
+    width: 220px;
+    height: 65px;
+    font-size: 0.85rem;
+  }
+  .press-section {
+    margin-top: 35px;
+  }
+}
+@media (max-width: 992px) {
+  .film-roll-badge {
+    top: 15%;
+    right: 10px;
+    width: 200px;
+    height: 60px;
+  }
+}
+
 @media (max-width: 768px) {
   .film-roll-badge {
-    width: 200px;
+    top: 10%;
+    right: 10px;
+    width: 180px;
+    height: 55px;
   }
-  .film-roll-text {
-    font-size: 1rem;
+  .countdown-text {
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .film-roll-badge {
+    top: 10%;
+    right: 5px;
     width: 160px;
+    height: 50px;
   }
-  .film-roll-text {
-    font-size: 0.9rem;
+  .countdown-text {
+    font-size: 0.85rem;
   }
 }
 </style>
