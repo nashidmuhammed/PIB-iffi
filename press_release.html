@@ -660,7 +660,7 @@ Accessible IFFI's Accessible Opening Ceremony will feature live Indian sign lang
     if (now < festivalStart) {
       // Before festival — show days to go
       const daysLeft = Math.ceil((festivalStart - now) / (1000 * 60 * 60 * 24));
-      countdownElement.innerHTML = `<span class="countdown-text">${daysLeft}</span> Day${daysLeft !== 1 ? 's' : ''} to go`;
+      countdownElement.innerHTML = `<span class="">${daysLeft}</span> Day${daysLeft !== 1 ? 's' : ''} to go`;
       // countdownElement.className = "countdown normal";
     } 
     else if (now >= festivalStart && now <= festivalEnd) {
