@@ -650,8 +650,8 @@ Accessible IFFI's Accessible Opening Ceremony will feature live Indian sign lang
 
 <script>
   // Define start and end dates
-  const festivalStart = new Date("2025-11-20T00:00:00").getTime();
-  const festivalEnd = new Date("2025-11-28T23:59:59").getTime();
+  const festivalStart = new Date("2025-11-11T00:00:00").getTime();
+  const festivalEnd = new Date("2025-11-11T23:59:59").getTime();
   const countdownElement = document.getElementById("countdown");
 
   const interval = setInterval(() => {
@@ -661,29 +661,29 @@ Accessible IFFI's Accessible Opening Ceremony will feature live Indian sign lang
       // Before festival — show days to go
       const daysLeft = Math.ceil((festivalStart - now) / (1000 * 60 * 60 * 24));
       countdownElement.innerHTML = `<span class="">${daysLeft}</span> Day${daysLeft !== 1 ? 's' : ''} to go`;
-      // countdownElement.className = "countdown normal";
-    } 
-    else if (now >= festivalStart && now <= festivalEnd) {
-      // During festival — show "Live!"
-      countdownElement.innerHTML = `🎉 <span class="highlight">The Festival is Live!</span> <span class="date-range">(Nov 20 – 28)</span>`;
-      // countdownElement.className = "countdown active";
-      const elements = document.querySelectorAll('.film-roll-badge');
-      const newWidth = '450px';
+
+    } else if (now >= festivalStart && now <= festivalEnd) {
+      // During festival — show "56th IFFI - Day X"
+      const currentDate = new Date();
+      const startDate = new Date(festivalStart);
+      const dayNumber = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+      countdownElement.innerHTML = `56th IFFI - Day ${dayNumber}`;
+    } else {
+      // After festival — show ended
+      countdownElement.innerHTML = `✨ <span class="ended">The Festival Has Ended</span>`;
       
+      // Fix: Move this outside clearInterval to ensure execution
+      const elements = document.querySelectorAll('.film-roll-badge');
+      const newWidth = '350px';
       elements.forEach(element => {
         element.style.width = newWidth;
       });
-    } 
-    else {
-      // After festival — show ended
-      countdownElement.innerHTML = `✨ <span class="ended">The Festival Has Ended</span>`;
-      const elements = document.querySelectorAll('.film-roll-badge');
-      const newWidth = '450px';
-      // countdownElement.className = "countdown ended-state";
+
       clearInterval(interval);
     }
   }, 1000);
 </script>
+
 
 
 
