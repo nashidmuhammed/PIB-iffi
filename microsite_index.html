@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,14 +10,16 @@
 
   <style>
     @font-face {
-        font-family: 'Gotham';
-        src: url('/fonts/gotham/gotham-regular.woff2') format('woff2'),
-            url('/fonts/gotham/gotham-regular.woff') format('woff'),
-            url('/fonts/gotham/gotham-regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-        }
-    body, html {
+      font-family: 'Gotham';
+      src: url('/fonts/gotham/gotham-regular.woff2') format('woff2'),
+        url('/fonts/gotham/gotham-regular.woff') format('woff'),
+        url('/fonts/gotham/gotham-regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body,
+    html {
       margin: 0;
       padding: 0;
       /* font-family: 'Poppins', sans-serif; */
@@ -24,9 +27,11 @@
       color: #2b0030;
       background: #fdf9ff;
     }
+
     .logo-invert {
-    filter: brightness(0) invert(1);
+      filter: brightness(0) invert(1);
     }
+
     /* Header */
     .site-header {
       position: relative;
@@ -42,27 +47,33 @@
       box-shadow: 0 2px 8px rgba(126, 0, 123, 0.2);
       transition: all 0.3s ease-in-out;
     }
+
     /* When fixed */
     .site-header.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    animation: slideDown 0.3s ease-in-out;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      animation: slideDown 0.3s ease-in-out;
     }
+
     /* Smooth slide-down effect */
     @keyframes slideDown {
-    from {
+      from {
         transform: translateY(-100%);
-    }
-    to {
+      }
+
+      to {
         transform: translateY(0);
+      }
     }
-    }
+
     /* Add top space so content doesn’t jump when header becomes fixed */
     body.has-fixed-header {
-    padding-top: 100px; /* adjust based on header height */
+      padding-top: 100px;
+      /* adjust based on header height */
     }
+
     .site-header .nav-link {
       color: #fff;
       font-weight: 500;
@@ -179,6 +190,7 @@
     .stories-section .card-title {
       color: #7e007b;
     }
+
     .stories-section .card img {
       height: 180px;
       object-fit: cover;
@@ -242,218 +254,236 @@
 
     /* Footer Styling */
     .site-footer {
-    background-color: #f9f9f9;
+      background-color: #f9f9f9;
     }
 
     .logo-img-footer {
-    height: 50px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+      height: 50px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .logo-img-footer:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+      transform: scale(1.05);
+      opacity: 0.9;
     }
+
     .logo-invert {
-    filter: brightness(0) invert(1);
-    height: 50px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+      filter: brightness(0) invert(1);
+      height: 50px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
+
     .logo-invert:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+      transform: scale(1.05);
+      opacity: 0.9;
     }
 
     .top-banner img {
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-        display: block;
-        }
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      display: block;
+    }
 
     /* Optional: match header logo sizing */
     @media (max-width: 768px) {
-    .logo-img-footer {
+      .logo-img-footer {
         height: 40px;
-    }
+      }
     }
 
     @media (max-width: 1208px) {
-        .site-header .container {
-          flex-direction: column;
-          text-align: center;
-        }
+      .site-header .container {
+        flex-direction: column;
+        text-align: center;
+      }
     }
+
     @media (max-width: 768px) {
       .nav {
         justify-content: center !important;
         margin-bottom: 0.5rem;
       }
+
       .hero-banner h1 {
         font-size: 2.25rem;
       }
+
       .hero-banner p {
         font-size: 1rem;
       }
+
       .iffi-footer {
         text-align: center;
       }
+
       .footer-links {
         margin-bottom: 1.5rem;
       }
     }
 
     .iffi-footer .logo-img-footer {
-        height: 55px;
-        filter: brightness(0.95);
-        transition: transform 0.3s ease, filter 0.3s ease;
-        }
+      height: 55px;
+      filter: brightness(0.95);
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
 
-        .iffi-footer .logo-img-footer:hover {
-        transform: scale(1.05);
-        filter: brightness(1.1);
-        }
-
-
-
-      /* Festival Map Section */
-      .festival-map-section {
-        background: transparent; /* removed blue bg */
-        color: #222; /* dark text color for readability */
-      }
-
-      .festival-map-section h2 {
-        color: #7e007b; /* gold accent (matches your theme) */
-        letter-spacing: 1px;
-        margin-bottom: 60px;
-      }
-
-      .festival-map-section img {
-        width: 100%;
-        max-width: none; 
-        transition: transform 0.3s ease;
-        /* transform: scale(1.15); */
-        transition: transform 0.4s ease;
-        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3));
-      }
-
-      .festival-map-section img:hover {
-        /* transform: scale(1.2); */
-      }
-
-      .festival-locations {
-        counter-reset: location;
-        padding-left: 0;
-        list-style: none;
-      }
-
-      .festival-locations li {
-        position: relative;
-        margin-bottom: 0.6rem;
-        padding-left: 2rem;
-        font-weight: 500;
-        /* color: #333; */
-      }
-
-      .festival-locations li::before {
-        counter-increment: location;
-        content: counter(location) ".";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #e96ae6; /* gold number */
-        font-weight: bold;
-      }
+    .iffi-footer .logo-img-footer:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
 
 
+
+    /* Festival Map Section */
+    .festival-map-section {
+      background: transparent;
+      /* removed blue bg */
+      color: #222;
+      /* dark text color for readability */
+    }
+
+    .festival-map-section h2 {
+      color: #7e007b;
+      /* gold accent (matches your theme) */
+      letter-spacing: 1px;
+      margin-bottom: 60px;
+    }
+
+    .festival-map-section img {
+      width: 100%;
+      max-width: none;
+      transition: transform 0.3s ease;
+      /* transform: scale(1.15); */
+      transition: transform 0.4s ease;
+      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.3));
+    }
+
+    .festival-map-section img:hover {
+      /* transform: scale(1.2); */
+    }
+
+    .festival-locations {
+      counter-reset: location;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .festival-locations li {
+      position: relative;
+      margin-bottom: 0.6rem;
+      padding-left: 2rem;
+      font-weight: 500;
+      /* color: #333; */
+    }
+
+    .festival-locations li::before {
+      counter-increment: location;
+      content: counter(location) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #e96ae6;
+      /* gold number */
+      font-weight: bold;
+    }
   </style>
   <style>
-.festival-map-section {
-  /* background: radial-gradient(circle at top left, #1b1b1b, #000); */
-}
+    .festival-map-section {
+      /* background: radial-gradient(circle at top left, #1b1b1b, #000); */
+    }
 
-.map-iframe-wrapper {
-  min-height: 400px;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
+    .map-iframe-wrapper {
+      min-height: 400px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
 
-.map-image-container {
-  min-height: 400px;
-}
+    .map-image-container {
+      min-height: 400px;
+    }
 
-.map-location-list {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 15px 20px;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
+    .map-location-list {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
 
-.map-location-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    .map-location-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-.map-location-list .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
+    .map-location-list .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
 
-/* RESPONSIVE */
-@media (max-width: 991px) {
-  .map-location-list {
-    position: static;
-    background: rgba(0, 0, 0, 0.6);
-    margin-top: 15px;
-  }
-}
-</style>
-<style>
-/* Restrict carousel control click area to the icon only */
-.carousel-control-prev,
-.carousel-control-next {
-  width: auto !important;       /* shrink to icon size */
-  height: auto !important;      /* remove full-height overlay */
-  top: 50%;                     /* vertically center */
-  transform: translateY(-50%);  /* adjust centering */
-  background: none !important;  /* remove background hit area */
-  opacity: 1;                   /* ensure visible */
-  z-index: 5;                   /* stay above images but not block cards */
-}
+    /* RESPONSIVE */
+    @media (max-width: 991px) {
+      .map-location-list {
+        position: static;
+        background: rgba(0, 0, 0, 0.6);
+        margin-top: 15px;
+      }
+    }
+  </style>
+  <style>
+    /* Restrict carousel control click area to the icon only */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: auto !important;
+      /* shrink to icon size */
+      height: auto !important;
+      /* remove full-height overlay */
+      top: 50%;
+      /* vertically center */
+      transform: translateY(-50%);
+      /* adjust centering */
+      background: none !important;
+      /* remove background hit area */
+      opacity: 1;
+      /* ensure visible */
+      z-index: 5;
+      /* stay above images but not block cards */
+    }
 
-/* Adjust icon button spacing */
-.carousel-control-prev {
-  left: 15px;                   /* small padding from edge */
-}
+    /* Adjust icon button spacing */
+    .carousel-control-prev {
+      left: 15px;
+      /* small padding from edge */
+    }
 
-.carousel-control-next {
-  right: 15px;
-}
+    .carousel-control-next {
+      right: 15px;
+    }
 
-/* Style the icons (you already have rounded bg-dark ones, so this is optional) */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #000 !important;
-  border-radius: 50%;
-  padding: 10px;
-}
-</style>
+    /* Style the icons (you already have rounded bg-dark ones, so this is optional) */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #000 !important;
+      border-radius: 50%;
+      padding: 10px;
+    }
+  </style>
 </head>
+
 <body>
-<!-- Top Banner Section -->
+  <!-- Top Banner Section -->
   <div class="top-banner">
     <img src="assets/IFFI PR Banner.png" alt="Press Header Banner" class="img-fluid w-100">
   </div>
   <!-- Header -->
-    <header id="stickyHeader" class="site-header py-3 bg-white shadow-sm">
+  <header id="stickyHeader" class="site-header py-3 bg-white shadow-sm">
     <div class="container d-flex justify-content-between align-items-center flex-wrap">
       <nav class="nav justify-content-center">
         <a class="nav-link active" href="#">HOME</a>
@@ -462,6 +492,7 @@
         <a class="nav-link" href="iffi_through.html">IFFI THROUGH OUR LENS</a>
         <!-- <a class="nav-link" href="#">CONNECT WITH US</a> -->
         <a class="nav-link" href="festival_map.html">IFFI MAP</a>
+        <a class="nav-link" href="iffiloid.html">IFFILOID</a>
       </nav>
       <div class="social-icons d-none d-lg-flex align-items-center">
         <a href="https://x.com/PIB_Panaji"><i class="bi bi-twitter-x"></i></a>
@@ -489,21 +520,24 @@
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460601.png" alt="Opening Ceremony">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460601.png"
+            alt="Opening Ceremony">
           <div class="carousel-caption">
             <h5>Opening Ceremony – Gala Night</h5>
             <p>Star-studded evening at Dr. Shyama Prasad Mukherjee Stadium, Goa.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460801.png" alt="Red Carpet">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460801.png"
+            alt="Red Carpet">
           <div class="carousel-caption">
             <h5>Red Carpet Moments</h5>
             <p>International luminaries, filmmakers & stars walk the red carpet at IFFI 55.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460101.png" alt="Closing Ceremony">
+          <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2024/nov/ph20241128460101.png"
+            alt="Closing Ceremony">
           <div class="carousel-caption">
             <h5>Closing Ceremony & Awards Night</h5>
             <p>The grand finale celebrating global cinema and award winners.</p>
@@ -521,215 +555,237 @@
     </div>
   </section>
 
-  
 
-<!-- Recent Stories Carousel -->
-<section class="stories-section py-5">
-  <div class="container">
-    <h2 class="text-center fw-bold mb-5 text-uppercase">Recent Stories</h2>
 
-    <div id="storiesCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
+  <!-- Recent Stories Carousel -->
+  <section class="stories-section py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5 text-uppercase">Recent Stories</h2>
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <div class="row g-4">
-            <!-- Story 1 -->
-            <div class="col-md-4">
-              <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186678" class="text-decoration-none text-dark">
-                <div class="card h-100 border-0 shadow-sm story-card">
-                  <img src="assets/images/story1.jpg" onerror="this.src='assets/default-story.jpeg';" alt="IFFI 2025 Media Accreditation" class="card-img-top">
-                  <div class="card-body">
-                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 04-November-2025</small>
-                    <h5 class="card-title">IFFI 2025 Media Accreditation: Deadline Extended to 10th November</h5>
-                    <p class="card-text small text-muted">Details extension of media accreditation deadline for the 56th International Film Festival of India 2025.</p>
-                    <span class="btn btn-outline-warning btn-sm">Read More</span>
+      <div id="storiesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <!-- Story 1 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186678"
+                  class="text-decoration-none text-dark">
+                  <div class="card h-100 border-0 shadow-sm story-card">
+                    <img src="assets/images/story1.jpg" onerror="this.src='assets/default-story.jpeg';"
+                      alt="IFFI 2025 Media Accreditation" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i>
+                        04-November-2025</small>
+                      <h5 class="card-title">IFFI 2025 Media Accreditation: Deadline Extended to 10th November</h5>
+                      <p class="card-text small text-muted">Details extension of media accreditation deadline for the
+                        56th International Film Festival of India 2025.</p>
+                      <span class="btn btn-outline-warning btn-sm">Read More</span>
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
+
+              <!-- Story 2 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186864"
+                  class="text-decoration-none text-dark">
+                  <div class="card h-100 border-0 shadow-sm story-card">
+                    <img src="assets/images/story2.jpg" onerror="this.src='assets/default-story.jpeg';"
+                      alt="Press Release: Press Information Bureau" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i>
+                        31-December-2024</small>
+                      <h5 class="card-title">Press Release: Press Information Bureau</h5>
+                      <p class="card-text small text-muted">Overview of the 56th edition of IFFI scheduled for 20–28 Nov
+                        2025 in Panaji, Goa.</p>
+                      <span class="btn btn-outline-warning btn-sm">Read More</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Story 3 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2179039"
+                  class="text-decoration-none text-dark">
+                  <div class="card h-100 border-0 shadow-sm story-card">
+                    <img src="assets/images/story3.jpg" onerror="this.src='assets/default-story.jpeg';"
+                      alt="Media Accreditation opens for 56th IFFI" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i>
+                        13-October-2025</small>
+                      <h5 class="card-title">Media Accreditation opens for 56th International Film Festival of India
+                      </h5>
+                      <p class="card-text small text-muted">Announcement of accreditation portal opening, Film
+                        Appreciation Course details, and accreditation process.</p>
+                      <span class="btn btn-outline-warning btn-sm">Read More</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
+          </div>
 
-            <!-- Story 2 -->
-            <div class="col-md-4">
-              <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2186864" class="text-decoration-none text-dark">
-                <div class="card h-100 border-0 shadow-sm story-card">
-                  <img src="assets/images/story2.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Press Release: Press Information Bureau" class="card-img-top">
-                  <div class="card-body">
-                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 31-December-2024</small>
-                    <h5 class="card-title">Press Release: Press Information Bureau</h5>
-                    <p class="card-text small text-muted">Overview of the 56th edition of IFFI scheduled for 20–28 Nov 2025 in Panaji, Goa.</p>
-                    <span class="btn btn-outline-warning btn-sm">Read More</span>
-                  </div>
-                </div>
-              </a>
-            </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row g-4">
 
-            <!-- Story 3 -->
-            <div class="col-md-4">
-              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2179039" class="text-decoration-none text-dark">
-                <div class="card h-100 border-0 shadow-sm story-card">
-                  <img src="assets/images/story3.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Media Accreditation opens for 56th IFFI" class="card-img-top">
-                  <div class="card-body">
-                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 13-October-2025</small>
-                    <h5 class="card-title">Media Accreditation opens for 56th International Film Festival of India</h5>
-                    <p class="card-text small text-muted">Announcement of accreditation portal opening, Film Appreciation Course details, and accreditation process.</p>
-                    <span class="btn btn-outline-warning btn-sm">Read More</span>
+              <!-- Story 4 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2183748"
+                  class="text-decoration-none text-dark">
+                  <div class="card h-100 border-0 shadow-sm story-card">
+                    <img src="assets/images/story4.jpg" onerror="this.src='assets/default-story.jpeg';"
+                      alt="Media Accreditation for 56th IFFI Open Till 5th November" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i>
+                        28-October-2025</small>
+                      <h5 class="card-title">Media Accreditation for 56th IFFI Open Till 5th November</h5>
+                      <p class="card-text small text-muted">Reminder about the accreditation window with festival
+                        highlights and support details.</p>
+                      <span class="btn btn-outline-warning btn-sm">Read More</span>
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
+
+              <!-- Story 5 -->
+              <div class="col-md-4">
+                <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2145796"
+                  class="text-decoration-none text-dark">
+                  <div class="card h-100 border-0 shadow-sm story-card">
+                    <img src="assets/images/story5.jpg" onerror="this.src='assets/default-story.jpeg';"
+                      alt="First Meeting of the 56th IFFI Steering Committee" class="card-img-top">
+                    <div class="card-body">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 17-July-2025</small>
+                      <h5 class="card-title">First Meeting of the 56th IFFI Steering Committee Held in Mumbai</h5>
+                      <p class="card-text small text-muted">Details of the strategic planning and committee members for
+                        IFFI 2025.</p>
+                      <span class="btn btn-outline-warning btn-sm">Read More</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Empty filler column for layout balance -->
+              <div class="col-md-4 d-none d-md-block"></div>
             </div>
           </div>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="row g-4">
-
-            <!-- Story 4 -->
-            <div class="col-md-4">
-              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2183748" class="text-decoration-none text-dark">
-                <div class="card h-100 border-0 shadow-sm story-card">
-                  <img src="assets/images/story4.jpg" onerror="this.src='assets/default-story.jpeg';" alt="Media Accreditation for 56th IFFI Open Till 5th November" class="card-img-top">
-                  <div class="card-body">
-                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 28-October-2025</small>
-                    <h5 class="card-title">Media Accreditation for 56th IFFI Open Till 5th November</h5>
-                    <p class="card-text small text-muted">Reminder about the accreditation window with festival highlights and support details.</p>
-                    <span class="btn btn-outline-warning btn-sm">Read More</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <!-- Story 5 -->
-            <div class="col-md-4">
-              <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2145796" class="text-decoration-none text-dark">
-                <div class="card h-100 border-0 shadow-sm story-card">
-                  <img src="assets/images/story5.jpg" onerror="this.src='assets/default-story.jpeg';" alt="First Meeting of the 56th IFFI Steering Committee" class="card-img-top">
-                  <div class="card-body">
-                    <small class="text-muted d-block mb-2"><i class="bi bi-calendar-event"></i> 17-July-2025</small>
-                    <h5 class="card-title">First Meeting of the 56th IFFI Steering Committee Held in Mumbai</h5>
-                    <p class="card-text small text-muted">Details of the strategic planning and committee members for IFFI 2025.</p>
-                    <span class="btn btn-outline-warning btn-sm">Read More</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <!-- Empty filler column for layout balance -->
-            <div class="col-md-4 d-none d-md-block"></div>
-          </div>
-        </div>
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#storiesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#storiesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
 
-      <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#storiesCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#storiesCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <!-- View More Button -->
+      <div class="text-center mt-5">
+        <a href="iffi_stories.html" class="btn px-4 py-2 fw-semibold shadow-sm"
+          style="background:#7e007b; color:#fff; border:none; border-radius:8px;">
+          View More
+        </a>
+      </div>
     </div>
-
-    <!-- View More Button -->
-    <div class="text-center mt-5">
-      <a href="iffi_stories.html" class="btn px-4 py-2 fw-semibold shadow-sm"
-         style="background:#7e007b; color:#fff; border:none; border-radius:8px;">
-        View More
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
   <!-- Footer -->
-<footer class="iffi-footer py-5">
-  <div class="container text-center text-md-start">
-    <div class="row align-items-center gy-4">
+  <footer class="iffi-footer py-5">
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center gy-4">
 
-      <!-- Organized & Supported By -->
-      <div class="col-12 col-md-8">
-        <h6 class="mb-4 fw-bold text-uppercase text-gold text-center text-md-start">
-          Organized & Supported By
-        </h6>
-        <ul class="nav justify-content-center justify-content-md-start align-items-center flex-wrap">
-          <li class="nav-item mx-3 my-2">
-            <a href="https://mib.gov.in" target="_blank">
-              <img src="assets/logos/MIB.png" alt="MIB" class=" logo-invert" style="height:55px;">
+        <!-- Organized & Supported By -->
+        <div class="col-12 col-md-8">
+          <h6 class="mb-4 fw-bold text-uppercase text-gold text-center text-md-start">
+            Organized & Supported By
+          </h6>
+          <ul class="nav justify-content-center justify-content-md-start align-items-center flex-wrap">
+            <li class="nav-item mx-3 my-2">
+              <a href="https://mib.gov.in" target="_blank">
+                <img src="assets/logos/MIB.png" alt="MIB" class=" logo-invert" style="height:55px;">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.goa.gov.in/" target="_blank">
+                <img src="assets/logos/GovtGoa.png" alt="GoaGov" class="logo-invert" style="height:55px;">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.iffigoa.org" target="_blank">
+                <img src="assets/logos/IFFI56White.png" alt="IFFI" class="logo-img-footer" style="height:55px;">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.pib.gov.in/" target="_blank">
+                <img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img-footer" style="height:55px;">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://www.nfdcindia.com/" target="_blank">
+                <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img-footer" style="height:55px;">
+              </a>
+            </li>
+            <li class="nav-item mx-3 my-2">
+              <a href="https://esg.co.in/" target="_blank">
+                <img src="assets/logos/esg.png" alt="ESG" class="logo-img-footer" style="height:55px;">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <h6 class="text-uppercase text-gold fw-semibold mb-3">Follow Us On</h6>
+          <div class="social-icons d-flex justify-content-md-end justify-content-center gap-3 mb-3">
+            <a href="https://x.com/PIB_Panaji" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/pib_goa/" class="social-btn"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/PIBPanaji/" class="social-btn"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UCOZYh-5suiCI3hH-qaqVQqA/videos" class="social-btn"><i
+                class="bi bi-youtube"></i></a>
+          </div>
+
+          <p class="mb-0 text-gray small">
+            Reach out to us on
+            <a href="mailto:iffi.mediadesk@pib.gov.in" class="text-decoration-none text-gold fw-semibold">
+              iffi.mediadesk@pib.gov.in
             </a>
-          </li>
-          <li class="nav-item mx-3 my-2">
-            <a href="https://www.goa.gov.in/" target="_blank">
-              <img src="assets/logos/GovtGoa.png" alt="GoaGov" class="logo-invert" style="height:55px;">
-            </a>
-          </li>
-          <li class="nav-item mx-3 my-2">
-            <a href="https://www.iffigoa.org" target="_blank">
-              <img src="assets/logos/IFFI56White.png" alt="IFFI" class="logo-img-footer" style="height:55px;">
-            </a>
-          </li>
-          <li class="nav-item mx-3 my-2">
-            <a href="https://www.pib.gov.in/" target="_blank">
-              <img src="assets/logos/pib-logo.png" alt="PIB" class="logo-img-footer" style="height:55px;">
-            </a>
-          </li>
-          <li class="nav-item mx-3 my-2">
-            <a href="https://www.nfdcindia.com/" target="_blank">
-              <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC" class="logo-img-footer" style="height:55px;">
-            </a>
-          </li>
-          <li class="nav-item mx-3 my-2">
-            <a href="https://esg.co.in/" target="_blank">
-              <img src="assets/logos/esg.png" alt="ESG" class="logo-img-footer" style="height:55px;">
-            </a>
-          </li>
-        </ul>
+          </p>
+        </div>
+
       </div>
 
-      <!-- Follow Us -->
-      <div class="col-12 col-md-4 text-center text-md-end">
-      <h6 class="text-uppercase text-gold fw-semibold mb-3">Follow Us On</h6>
-      <div class="social-icons d-flex justify-content-md-end justify-content-center gap-3 mb-3">
-        <a href="https://x.com/PIB_Panaji" class="social-btn"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.instagram.com/pib_goa/" class="social-btn"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.facebook.com/PIBPanaji/" class="social-btn"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.youtube.com/channel/UCOZYh-5suiCI3hH-qaqVQqA/videos" class="social-btn"><i class="bi bi-youtube"></i></a>
+      <hr class="border-light opacity-25 my-4">
+
+      <div class="text-center">
+        <p class="small mb-0 text-light">
+          &copy; 56th International Film Festival of India (IFFI) 2025. All Rights Reserved
+        </p>
       </div>
-
-      <p class="mb-0 text-gray small">
-        Reach out to us on 
-        <a href="mailto:iffi.mediadesk@pib.gov.in" class="text-decoration-none text-gold fw-semibold">
-          iffi.mediadesk@pib.gov.in
-        </a>
-      </p>
     </div>
-
-    </div>
-
-    <hr class="border-light opacity-25 my-4">
-
-    <div class="text-center">
-      <p class="small mb-0 text-light">
-        &copy; 56th International Film Festival of India (IFFI) 2025. All Rights Reserved
-      </p>
-    </div>
-  </div>
-</footer>
-<script>
-  window.addEventListener("scroll", function () {
-    const header = document.getElementById("stickyHeader");
-    const bannerHeight = document.querySelector(".top-banner").offsetHeight;
-    if (window.scrollY > bannerHeight - 50) {
-      header.classList.add("fixed");
-      document.body.classList.add("has-fixed-header");
-    } else {
-      header.classList.remove("fixed");
-      document.body.classList.remove("has-fixed-header");
-    }
-  });
-</script>
+  </footer>
+  <script>
+    window.addEventListener("scroll", function () {
+      const header = document.getElementById("stickyHeader");
+      const bannerHeight = document.querySelector(".top-banner").offsetHeight;
+      if (window.scrollY > bannerHeight - 50) {
+        header.classList.add("fixed");
+        document.body.classList.add("has-fixed-header");
+      } else {
+        header.classList.remove("fixed");
+        document.body.classList.remove("has-fixed-header");
+      }
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
